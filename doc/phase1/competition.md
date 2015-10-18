@@ -8,7 +8,7 @@ Trakt is a TV/Movie tracking Web App that displays all popular/most played movie
 
 Last.fm is a music tracking Web App that uses Spotify to track music. Each user can create their own profile with their most popular tracks/artists/albums. They are able to view information on each song such as the total number of plays. Users can create their own custom playlists and share it with their followers. As well, users can comment on artists/albums as well as send messages to other users. More information on Last.fm: http://www.last.fm/
  
-All of these products including ours have the following basic features: basic login to a personalized profile, tracking previously seen media, adding media to some list for later viewing, and commenting/rating media items. All of these listed features will be part of our MVP.
+All of these products including ours have the following basic features: basic login to a personalized profile, tracking previously seen media, adding media to some list for later viewing, discovering recommendations from the database, and commenting/rating media items. All of these listed features will be part of our MVP.
 
 Our product is different because we track multiple media types including books, music, television shows, and movies. Our product will be very minimal in the sense that it is very simple to use and to navigate. We will display the core information for each media type while keeping everything simple.
 
