@@ -2,7 +2,37 @@
 
 angular.module('mindexusApp')
   .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+
+    $scope.userEntries = [];
+    $scope.newEntry = '';
+
+    $http.get('/api/entries').success(function(userEntries) {
+      $scope.userEntries = userEntries;
+    });
+
+    $scope.refreshEntries=function(){
+      $http.get('/api/entries').success(function(userEntries) {
+        $scope.userEntries = userEntries;
+      });
+    };
+
+    $scope.addEntry = function() {
+      if($scope.newEntry === '') {
+        return;
+      }
+      $http.post('/api/entries', { name: $scope.newEntry  });
+      $scope.refreshEntries();
+      $scope.newEntry = '';
+    };
+
+    $scope.deleteEntry = function(entry) {
+      $http.delete('/api/entries/' + entry._id);
+      $scope.refreshEntries();
+    };
+
+
+// orginal generated stuff
+/*    $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
@@ -18,5 +48,5 @@ angular.module('mindexusApp')
 
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
-    };
+    };*/
   });
