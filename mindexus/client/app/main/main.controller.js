@@ -27,8 +27,15 @@ angular.module('mindexusApp')
 
     $scope.deleteEntry = function(entry) {
       $http.delete('/api/entries/' + entry._id);
+      /*
+      int idx = $scope.userEntries.indexOf(entry);
+      if (idx > -1){
+        $scope.userEntries.splice(idx, 1);
+      }
+      */
       //$scope.userEntries = [];
       $scope.refreshEntries();
+
     };
 
 
