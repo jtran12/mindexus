@@ -27,6 +27,7 @@ angular.module('mindexusApp')
 
     $scope.deleteEntry = function(entry) {
       $http.delete('/api/entries/' + entry._id);
+      //$scope.userEntries = [];
       $scope.refreshEntries();
     };
 

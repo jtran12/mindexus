@@ -8,15 +8,18 @@
   </div>
 </header>
 
+
 <div class="container">
 
   <h1 class="page-header">Entries:</h1>
-    <p class="form-group" ng-repeat="entry in userEntries">
+    <p class="input-group" ng-repeat="entry in userEntries">
      <input type="text" ng-model="entry.name" class="form-control">
        <span class="input-group-btn">
           <button class="btn btn-danger" ng-click="removeEntry(entry)" aria-label="Remove">X</button>
        </span>
-    </p>
+    </p> 
+  <h1 class="page-header">Entries:</h1>
+ 
 
 
   <!-- Entries input -->
