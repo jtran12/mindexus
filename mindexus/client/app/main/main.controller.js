@@ -3,6 +3,10 @@
 angular.module('mindexusApp')
   .controller('MainCtrl', function ($scope, $http) {
 
+    $scope.go = function(path){
+      $location.path(path);
+    }
+    /*
     $scope.userEntries = [];
     $scope.newEntry = '';
 
@@ -32,7 +36,7 @@ angular.module('mindexusApp')
       if (idx > -1){
         $scope.userEntries.splice(idx, 1);
       }
-      */
+      
       //$scope.userEntries = [];
       $scope.refreshEntries();
 
