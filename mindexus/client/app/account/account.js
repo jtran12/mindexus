@@ -14,9 +14,9 @@ angular.module('mindexusApp')
         controller: 'SignupCtrl'
       })
       .state('home', {
-        url: '/home',
-        templateUrl: 'app/account/home/home.html',
-        controller: 'homeCtrl'
+        url: '/collections',
+        templateUrl: 'app/account/collections/collections.html',
+        controller: 'CollectionsCtrl'
       })
       .state('settings', {
         url: '/settings',

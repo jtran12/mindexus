@@ -10,6 +10,7 @@ angular.module('mindexusApp')
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
+    $scope.isUser = Auth.isUser;
     $scope.getCurrentUser = Auth.getCurrentUser;
 
     $scope.logout = function() {
