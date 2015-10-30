@@ -3,24 +3,23 @@
 <header class="hero-unit" id="banner">
   <div class="container">
     <h1>Welcome to MINdEXUS!</h1>
-    <p class="lead">web dev confuses me</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+    <p class="lead">Your Personal Media Index Nexus!</p>
   </div>
 </header>
 
 <div class="container">
   <div style="padding-top:50px;">
-    <form class="form-horizontal" role="form">
+    <form class="form-horizontal" role="form" name="form" ng-submit="login(form)" novalidate>
       <div class="form-group">
-        <label class="control-label col-sm-2" for="email">Username:</label>
+        <label class="control-label col-sm-2" for="email">Email:</label>
         <div class="col-sm-10">
-          <input type="email" class="form-control" id="email" placeholder="COOLSKELETON95">
+          <input type="email" class="form-control" id="email" placeholder="email@email.com" ng-model="user.email" required>
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-sm-2" for="pwd">Password:</label>
         <div class="col-sm-10"> 
-          <input type="password" class="form-control" id="pwd" placeholder="***********">
+          <input type="password" class="form-control" id="pwd" placeholder="***********" ng-model="user.password" required>
         </div>
       </div>
       <div class="form-group"> 
@@ -32,11 +31,7 @@
       </div>
       <div class="form-group"> 
         <div class="col-sm-offset-2 col-sm-10">
-          <a href="/login" class="btn btn-info">Log in</a>
-        </div>
-      </div>
-      <div class="form-group"> 
-        <div class="col-sm-offset-2 col-sm-10">
+          <button class="btn btn-info">Login</button>
           <a href="/signup" class="btn btn-warning">Sign up</a>
         </div>
       </div>

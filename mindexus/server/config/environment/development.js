@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/mindexus-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };

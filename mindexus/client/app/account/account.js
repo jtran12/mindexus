@@ -13,6 +13,11 @@ angular.module('mindexusApp')
         templateUrl: 'app/account/signup/signup.html',
         controller: 'SignupCtrl'
       })
+      .state('home', {
+        url: '/collections',
+        templateUrl: 'app/account/collections/collections.html',
+        controller: 'CollectionsCtrl'
+      })
       .state('settings', {
         url: '/settings',
         templateUrl: 'app/account/settings/settings.html',

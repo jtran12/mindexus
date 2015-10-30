@@ -47,7 +47,7 @@ angular.module('mindexusApp', [
       Auth.isLoggedInAsync(function(loggedIn) {
         if (next.authenticate && !loggedIn) {
           event.preventDefault();
-          $location.path('/login');
+          $location.path('/home');
         }
       });
     });

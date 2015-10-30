@@ -136,6 +136,10 @@ angular.module('mindexusApp')
         return currentUser.role === 'admin';
       },
 
+      isUser: function() {
+        return currentUser.role === 'user';
+      },
+
       /**
        * Get auth token
        */
