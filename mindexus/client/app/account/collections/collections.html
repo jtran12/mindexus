@@ -8,7 +8,7 @@
 
 <div class="container">
 
-  <h1 class="page-header">Your Collections:</h1>
+<!--   <h1 class="page-header">Your Collections:</h1>
     <p class="input-group" ng-repeat="entry in collections">
       <input type="text" ng-model="collections.name" class="form-control">
         <span class="input-group-btn">
@@ -26,7 +26,7 @@
           </span>
         </div>
       </div>
-    </form>
+    </form> -->
 
   
   <h1 class="page-header">Entries:</h1>
@@ -35,19 +35,69 @@
        <span class="input-group-btn">
           <button class="btn btn-danger" ng-click="deleteEntry(entry)" aria-label="Remove">X</button>
        </span>
-
     </p> 
 
-   Entries Input 
-  <form role="form" ng-submit="addEntry()">
-    <div class="row">
-      <div class="input-group">
-        <input type="text" ng-model="newEntry" name ="newEntry" placeholder="Entry name?" class="form-control" required>
-        <span class="input-group-btn">
-          <input type="submit" class="btn btn-primary" value="Add">
-        </span>
-      </div>
-    </div>
-  </form>
+    <uib-accordion close-others="false" ng-repeat="entry in userEntries">
+      <uib-accordion-group  class = "col-sm-11">
+        <uib-accordion-heading>
+          {{entry.name}}
+          <button class="btn btn-danger btn-sm" ng-click="deleteEntry(entry)" aria-label="Remove" style="float: right;">X</button>
+          <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+        </uib-accordion-heading>
+          date added: {{entry.date}} TODO: add more info here
+      </uib-accordion-group>
+
+    </uib-accordion>
+
+<!--    Entries Input  -->
+  <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">+New Entry</button>
+  <div uib-collapse="isCollapsed">
+    <div class="well well-lg">
+      <form class="form-horizontal" role="form" ng-submit="addEntry()">
+          <div class="form-group">
+            <label class = "col-sm-2 control-label">Name/Title:</label>
+            <div class = "col-sm-10">
+              <input type="text" ng-model="newEntry" name ="newEntry" placeholder="Enter media name" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class = "col-sm-2 control-label">Category (TODO make a dropdown):</label>
+            <div class = "col-sm-4">
+              <input type="text" ng-model="newCategory" name ="newCategory" placeholder="Enter media Category" class="form-control">
+            </div>
+            <label class = "col-sm-2 control-label">or New Category:</label>
+            <div class = "col-sm-4">
+              <input type="text" ng-model="newCategory" name ="newCategory" placeholder="Enter media Category" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class = "col-sm-2 control-label">Keywords (optional)(TODO parse keywords into array):</label>
+            <div class = "col-sm-10">
+              <input type="text" ng-model="newKeywords" name ="newKeywords" placeholder="Add Keywords" class="form-control">
+            </div>
+          </div>     
+          <div class="form-group">
+            <label class = "col-sm-2 control-label">Rating (0-5)(optional):</label>
+            <div class = "col-sm-10">
+                <uib-rating ng-model="newRating" max="5" on-hover="hoveringOver(value)" on-leave="overStar = null" aria-labelledby="default-rating" ></uib-rating>
+            </div>
+          </div>    
+          <div class="form-group"> 
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label><input type="checkbox" ng-model="newSeenIt">Seen it already</label>
+              </div>
+            </div>
+          </div>     
+          <div class="form-group">
+            <div class = "col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+          </div>
+    </form>
+  </div>
+  </div>
+  
+
   
 </div>

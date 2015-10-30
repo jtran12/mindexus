@@ -4,6 +4,7 @@ angular.module('mindexusApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
+  'ngAnimate',
   'ui.router',
   'ui.bootstrap'
 ])
