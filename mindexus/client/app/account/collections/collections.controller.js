@@ -12,14 +12,32 @@ angular.module('mindexusApp')
 
     $scope.userEntries = [];
     $scope.newEntry = '';
-
+    
     $http.get('/api/entries').success(function(userEntries) {
-      $scope.userEntries = userEntries;
+      var userEntriesString = JSON.stringify(userEntries);
+      var userEntriesMap = JSON.parse(userEntriesString);
+      var result = [];
+      for(var i = 0; i < userEntriesMap.length; i++){
+        if(userEntriesMap[i].email == Auth.getCurrentUser().email){
+          result.push(userEntriesMap[i]);
+        }
+      }
+      alert(JSON.stringify(result));
+      $scope.userEntries = result;
     });
 
     $scope.refreshEntries=function(){
       $http.get('/api/entries').success(function(userEntries) {
-        $scope.userEntries = userEntries;
+        var userEntriesString = JSON.stringify(userEntries);
+        var userEntriesMap = JSON.parse(userEntriesString);
+        var result = [];
+        for(var i = 0; i < userEntriesMap.length; i++){
+          if(userEntriesMap[i].email == Auth.getCurrentUser().email){
+            result.push(userEntriesMap[i]);
+          }
+        }
+        alert(JSON.stringify(result));
+        $scope.userEntries = result;
       });
     };
 
@@ -27,7 +45,7 @@ angular.module('mindexusApp')
       if($scope.newEntry === '') {
         return;
       }
-      $http.post('/api/entries', { name: $scope.newEntry  });
+      $http.post('/api/entries', { name: $scope.newEntry, email: Auth.getCurrentUser().email});
       $scope.refreshEntries();
       $scope.newEntry = '';
     };
