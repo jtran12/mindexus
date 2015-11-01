@@ -18,8 +18,8 @@
         <li ng-show="isUser()" ng-class="{active: isActive('/collections')}"><a href="/collections">Your Collections</a></li>
         <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
         <form>
-          <input type="text" placeholder="Search for collections..." required>
-          <input type="button" value="Search">
+          <input type="text" id="search" placeholder="Search for collections..." required>
+          <button type="button" class="btn btn-warning" style="height:28px; width:75px" >Search</button>
         </form>
       </ul>
 
