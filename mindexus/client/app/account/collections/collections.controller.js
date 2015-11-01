@@ -12,11 +12,16 @@ angular.module('mindexusApp')
     $scope.userEntries = [];
     $scope.newEntry = '';
     $scope.newCategory = '';
+    $scope.newKeywordsString = "";
     $scope.newKeywords = [];
     $scope.newRating = 0;
     $scope.newSeenIt = false;
 
     $scope.ratingStates = [{stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty'}];
+
+    String.prototype.capitalize = function(lower) {
+     return (lower ? this.toLowerCase() : this).replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+    };
     
     $http.get('/api/entries').success(function(userEntries) {
       var userEntriesString = JSON.stringify(userEntries);
@@ -51,7 +56,11 @@ angular.module('mindexusApp')
       if($scope.newEntry === '') {
         return;
       }
-      $http.post('/api/entries', { name: $scope.newEntry, 
+      $scope.newKeywords = ($scope.newKeywordsString).split(" ");
+
+
+      $http.post('/api/entries', { 
+        name: ($scope.newEntry).capitalize(true), 
         email: Auth.getCurrentUser().email, 
         category: $scope.newCategory,
         keywords: $scope.newKeywords,
@@ -61,6 +70,7 @@ angular.module('mindexusApp')
       $scope.refreshEntries();
       $scope.newEntry = '';
       $scope.newCategory = '';
+      $scope.newKeywordsString = "";
       $scope.newKeywords = [];
       $scope.newRating = 0;
       $scope.newSeenIt = false;

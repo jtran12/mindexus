@@ -48,7 +48,9 @@
           <strong>Date Added:</strong> {{entry.date}} <br>
           <strong>Category:</strong> {{entry.category}} <br>
           <strong>Keywords:</strong> {{entry.keywords}} <br>
-          <strong>Rating:</strong> {{entry.rating}} stars<br>
+          
+          <!-- <strong>Rating:</strong> {{entry.rating}} stars<br> -->
+          <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
           <strong>Seen It:</strong> {{entry.seenIt}}
 
           <br><br>
@@ -93,9 +95,9 @@
             </div>
           </div>
           <div class="form-group">
-            <label class = "col-sm-2 control-label">Keywords (optional):</label>
+            <label class = "col-sm-2 control-label">Keywords (separate with space):</label>
             <div class = "col-sm-10">
-              <input type="text" ng-model="newKeywords" name ="newKeywords" placeholder="Add Keywords" class="form-control">
+              <input type="text" ng-model="newKeywordsString" name ="newKeywordsString" placeholder="Add Keywords" class="form-control">
             </div>
           </div>     
           <div class="form-group">
@@ -128,5 +130,7 @@
          <a href="https://github.com/csc301-fall-2015/project-team4-L0101"> github</a></p>
   </div>
 </footer>
-</div>
 
+
+
+</div>
