@@ -17,10 +17,13 @@
         </li>
         <li ng-show="isUser()" ng-class="{active: isActive('/collections')}"><a href="/collections">Your Collections</a></li>
         <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
-        <form>
-          <input type="text" id="search" placeholder="Search for collections..." required>
-          <button type="button" class="btn btn-warning" style="height:28px; width:75px" >Search</button>
-        </form>
+
+        <li ng-show="isUser()">
+            <input class="form-control" type="text" id="search" placeholder="Search for collections..." required style="margin:7px">
+        </li>
+        <li ng-show="isUser()">
+            <button type="button" class="btn btn-warning" style="height:33px; width:75px; margin:7px">Search</button>
+        </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
