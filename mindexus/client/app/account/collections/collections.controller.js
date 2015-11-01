@@ -27,7 +27,7 @@ angular.module('mindexusApp')
           result.push(userEntriesMap[i]);
         }
       }
-      alert(JSON.stringify(result));
+      //alert(JSON.stringify(result));
       $scope.userEntries = result;
     });
 
