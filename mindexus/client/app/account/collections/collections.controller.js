@@ -71,6 +71,14 @@ angular.module('mindexusApp')
       $scope.refreshEntries();
     }
 
+    $scope.editEntry = function(entry) {
+      //TODO Edit the entry menu
+    }
+
+    $scope.hasSeen = function(entry){
+      entry.seenIt = true;
+    }
+
 
     
   });
