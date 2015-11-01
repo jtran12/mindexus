@@ -17,6 +17,10 @@
         </li>
         <li ng-show="isUser()" ng-class="{active: isActive('/collections')}"><a href="/collections">Your Collections</a></li>
         <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
+        <form>
+          <input type="text" placeholder="Search for collections..." required>
+          <input type="button" value="Search">
+        </form>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
