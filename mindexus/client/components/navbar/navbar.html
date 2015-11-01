@@ -19,10 +19,10 @@
         <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
 
         <li ng-show="isUser()">
-            <input class="form-control" type="text" id="search" placeholder="Search for collections..." required style="margin:7px">
+            <input class="form-control" type="text" id="search" placeholder="Search for collections..." required style="margin:7px; width:300px">
         </li>
         <li ng-show="isUser()">
-            <button type="button" class="btn btn-warning" style="height:33px; width:75px; margin:7px">Search</button>
+            <button type="button" class="btn btn-warning" style="height:33px; width:75px; margin:7px" ng-click="search(search)">Search</button>
         </li>
       </ul>
 

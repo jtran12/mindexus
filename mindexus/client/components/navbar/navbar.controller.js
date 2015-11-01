@@ -21,4 +21,10 @@ angular.module('mindexusApp')
     $scope.isActive = function(route) {
       return route === $location.path();
     };
+
+    $scope.search = function() {
+      //TODO IMPLEMENT
+      alert(search.value);
+    }
+
   });

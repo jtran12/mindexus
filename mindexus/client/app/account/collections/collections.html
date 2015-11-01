@@ -6,7 +6,7 @@
   </div>
 </header>
 
-<div class="form-control" style="border-style: solid; border-width:1px; float: left; width: 15%; height: 250px; position: relative; left: 50px; top: 20px">
+<div class="hero-unit" style="width: 250px; height: 250px; display: inline-block; float: left">
   <strong><p>Sort By:</p></strong>
 
   <select name="sort" ng-model="sortBy" class="form-control">
@@ -25,7 +25,7 @@
   </select>
 </div>
 
-<div class="container">
+<div class="container" style="display: inline-block">
 
   <!--
   <h1 class="page-header">Entries:</h1>
@@ -71,9 +71,10 @@
             </div>
           </div>
           <div class="form-group">
-            <label class = "col-sm-2 control-label">Category</label>
+            <label class = "col-sm-2 control-label">Category:</label>
             <div class = "col-sm-4">
               <select name="category" ng-model="newCategory" class="form-control">
+                <option value="" disabled selected>+ Choose One</option>
                 <option value="Action">Action</option>
                 <option value="Adventure">Adventure</option>
                 <option value="Comedy">Comedy</option>
@@ -120,13 +121,12 @@
   </div>
   
 
-  
-</div>
-
-<footer class="footer">
+  <footer class="footer">
   <div class="container">
       <p>MINdEXUS |
         ivywireline jtran12 jasonphan johnibr MsClaudz |
          <a href="https://github.com/csc301-fall-2015/project-team4-L0101"> github</a></p>
   </div>
 </footer>
+</div>
+
