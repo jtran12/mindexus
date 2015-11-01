@@ -6,7 +6,7 @@
   </div>
 </header>
 
-<div class="hero-unit" style="width: 250px; height: 250px; display: inline-block; float: left">
+<div class="hero-unit" style="width: 250px; height: 500px; display: inline-block; float: left">
   <strong><p>Sort By:</p></strong>
 
   <select name="sort" ng-model="sortBy" class="form-control">
@@ -23,7 +23,40 @@
     <option value="keyword">Keyword</option>
     <option value="category">Category</option>
   </select>
+  <br>
+  <!--TODO: Link all the By Category and Keyword to do the stuff intended-->
+  <uib-accordion close-others="false" ng-model="filterCategory">
+      <uib-accordion-group  class = "col-sm-13">
+        <uib-accordion-heading>
+          <strong>Browse Entries:</strong>
+          <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-th': !status.open}"></i>
+
+        </uib-accordion-heading>
+          <ul>
+            <li><font color="black">By Category</font></li>
+            <li><font color="black">By Keyword</font></li>
+          </ul>
+      </uib-accordion-group>
+  </uib-accordion>
+  <uib-accordion close-others="false" ng-model="filterCategory">
+    <uib-accordion-group  class = "col-sm-13">
+      <uib-accordion-heading>
+        <strong>Browse Indexes:</strong>
+        <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-list-alt': !status.open}"></i>
+
+      </uib-accordion-heading>
+        <ul>
+          <li><font color="black">By Category</font></li>
+          <li><font color="black">By Keyword</font></li>
+        </ul>
+    </uib-accordion-group>
+  </uib-accordion>
+  <br>
+  <button class="btn btn-info btn-lg" href="/collections" aria-label="Remove" style="float: right;">My Indexes</button>
+
 </div>
+
+
 
 <div class="container" style="display: inline-block">
 
