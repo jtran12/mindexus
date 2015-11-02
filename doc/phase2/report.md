@@ -44,7 +44,6 @@ a.
 	has provided us with a skeleton of a web app so we can focus on designing and implementing 
 	our project by saving us time on setting and hooking up technologies such as angularJS 
 	and MongoDB required by the project.
-	
 	Another decision that have gone well was that we have decided to finish the backend or 
 	server-side of our web application first with minimum front-end elements for testing purposes. 
 	By ensuring the backend is finished first, we can work on the front end knowing exactly what data 
