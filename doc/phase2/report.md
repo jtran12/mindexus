@@ -43,14 +43,14 @@ a.
 	(https://github.com/DaftMonk/generator-angular-fullstack) 
 	has provided us with a skeleton of a web app so we can focus on designing and implementing 
 	our project by saving us time on setting and hooking up technologies such as angularJS 
-	and MongoDB required by the project. 
+	and MongoDB required by the project.
 	
-		Another decision that have gone well was that we have decided to finish the backend or 
+	Another decision that have gone well was that we have decided to finish the backend or 
 	server-side of our web application first with minimum front-end elements for testing purposes. 
 	By ensuring the backend is finished first, we can work on the front end knowing exactly what data 
 	will be available for retrieval in the server and by extension the database. 
 	
-		There were a lot of problems during the beginning of phase 2 and they are described in part b. 
+	There were a lot of problems during the beginning of phase 2 and they are described in part b. 
 	After some time, we have decided to hold a mandatory meeting where every member of the team would 
 	be present for making crucial technical as well as design decisions regarding the project. 
 	This meeting occurred on Thursday, October 29 and it had gone very well. We have decided to change 
