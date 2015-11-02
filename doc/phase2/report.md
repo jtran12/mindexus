@@ -6,6 +6,39 @@ The way that we estimated our task size was based upon a team evaluation. The Sc
 
 <b>Sprint Backlog</b>
 
+What our team planned to build for phase 2:<br>
+For phase 2, we wanted to build a solid base for our web application and to start implementing some key features of the mvp. First off, we planned to build and set up much of the back-end including the database scaffold (issues #20,17,#14), API endpoints (#15) and connecting the tools we planned to use such as bower (a tools package manager for web development). For phase 2, we planned to set up the database enough such that it could store user emails and passwords as well as user media entries (#12, #13, #21, #27).
+
+Our plan was to ensure the front-end of the app allowed users to register, log in and start viewing, adding and deleting entries in their account by the end of the phase 2 sprint (#24). This meant we needed the base HTML and CSS for the pages that would allow for this user interaction with our app. We also needed to make sure that the back-end and front-end components were integrated correctly. Beyond this, we planned ahead for building the other features of the mvp such as filtering and moving entries (#19).<br>
+
+How the we planned to build it:<br>
+Early in our planning, we decided to split the team into back end (Jason Phan, John, Steven) and front end (Claudia, Jason Tran). As we were dividing the responsibilities of who would work on what task, we made sure that each complicated task that involved both ends would have one person on one end assigned to the issue but also a team member on the other end to help. We decided we would focus on laying down the back-end groundwork first and then alternating between focusing on the back and front ends. We tried to plan a logical progression of which features we would work on, such as enabling adding entries before enabling editing or deleting entries.
+<br>
+Our planned general order of tasks were:<br>
+1. use the yeoman angular-fullstack generator to scaffold our app and database<br>
+2. learn from the generated scaffold and start building the app starting from the back end<br>
+3. set up the “entry” element (back end base)<br>
+4. populate a page on our web app with entry data from the database<br>
+5. set up and test user instances and login system<br>
+6. continue to add and refine features of the mvp by starting with back end then working on front end<br>
+
+Our specific planned division of responsibilities in order:
+- #12 Claudia & Steven
+- #20 Phan & Tran
+- #21 Steven
+- #14 Phan
+- #18 Tran & Claudia
+- #15 Steven and John and Phan
+- #19 Claudia
+- #13 John
+- #26 all backend
+- #16 Phan & John
+- #17 Steven & Claudia
+- #27 Tran & John
+- #28 Tran & Phan
+- #23 Claudia & Steven
+- #22 Phan & Claudia
+
 <b>Update Meetings</b>
 
 Meeting #1:  
