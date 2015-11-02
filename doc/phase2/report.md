@@ -11,3 +11,13 @@ The way that we estimated our task size was based upon a team evaluation. The Sc
 <b>Burndown Chart</b> 
 
 <b>Review & Retrospective</b>
+
+Our plan started off with our MVP. One of our group members (claudia) decided to draw the UI as a schematic which served as our baseline for features/development
+as shown here: https://projects.invisionapp.com/share/U34LG78HC#/screens/109071317
+Afterwards, we all sat down together and had a sprint planning to create issues that needed to be done to implement the MVP and basic aspects of the project.
+We created the baseline and prioritized certain issues that needed to be done as some issues were blocking other issues from being worked on. Once our plan had evolved from rough ideas,
+we moved onto issues, after issues were set, we started to tackle them as a group before branching off to our respective tasks.
+
+Some tasks that were incomplete were generally attributed to the short length of the sprint and commitments to other classes. Tasks such as, "Users can move entries from "to see list" to "seen it list"" relied on other tasks being completed first and was therefore blocked until a backend task was to be completed.
+
+Some tasks that were split before before being completed as we were all learning how to work with the new technologies. We collaborated in a group meeting in order to knock off some issues. The tasks tackled were issues #12, #13, #14, #17, #18, #20, #27. These issues which were completed/worked upon represents the culmination of our group activity and collaboration in learning how the web app works. Everyone contributed to these issues.
