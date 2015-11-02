@@ -8,38 +8,38 @@ The way that we estimated our task size was based upon a team evaluation. The Sc
 
 <b>Update Meetings</b>
 
-Meeting #1
-Date and Time: October 20 at 9:10 PM
-Location: Skype
-Attendance: Entire group
+Meeting #1:  
+Date and Time: October 20 at 9:10 PM  
+Location: Skype  
+Attendance: Entire group  
 
-Description: 
+Description:  
 We had an online conference call to discuss the responsibilities of each member in our group, and we wanted to decide on which web development frameworks to use in the process of building our web application. It was decided amongst the group that there should be 2 teams to handle the front-end and back-end development. The team responsible for back-end is Jason Phan, John, and Steven; front-end is Claudia and Jason Tran. The discussion on available frameworks along with online resources that would help us develop our application lead the group to let each team decide on which resources and frameworks they felt comfortable with to accomplish their part. The group will meet again in the upcoming days to decide on which frameworks they want to work with. 
 
-Meeting #2
-Date and Time: October 23 at 10PM
-Location: Skype
-Attendance: Entire group
+Meeting #2:  
+Date and Time: October 23 at 10PM  
+Location: Skype  
+Attendance: Entire group  
 
-Description:
+Description:  
 The purpose of this group meeting was to decide on what tasks had to be completed in order to have our product working, and to assign specific tasks to members in the group. Before tasks were assigned to individuals, we ranked each task’s difficulty to prioritize which tasks should be completed first, and to ensure that a task had a reasonable amount of individuals working on it. We split the tasks and marked them as “issues” on Github. Here is a link to the issues:
 https://github.com/csc301-fall-2015/project-team4-L0101/issues?q=is%3Aopen+is%3Aissue
 We had also finalized which tools and frameworks we would use for front-end and back-end development.
 
-Meeting #3
-Date and Time: October 29 at 10PM
-Location: Skype
-Attendance: Entire group
+Meeting #3:  
+Date and Time: October 29 at 10PM  
+Location: Skype  
+Attendance: Entire group  
 
-Description:
+Description:  
 The purpose of this meeting was to collaborate to eliminate issues that required both front-end and back-end integration. Since there were many new technologies to be learned, this was a great way for group members with experience to help and clarify the use of these tools and help each other with difficult tasks. The conference call was extremely effective as we closed 7 issues; #12, #13, #14, #17, #18, #20, and #27 to be specific. 
 
-Meeting #4
-Date and Time: November 1 at 11PM
-Location: Skype
-Attendance: Entire group
+Meeting #4:  
+Date and Time: November 1 at 11PM  
+Location: Skype  
+Attendance: Entire group  
 
-Description:
+Description:  
 In our final meeting before phase 2’s due date, we discussed the current state of our project. In terms of the MVP and stability of our project, everything is going as expected. The functionality we wanted for this phase is complete, and there are currently a few adjustments being made to the user interface. There was live testing of our web application during the call to ensure that it was functioning as expected before we submitted our project code. Afterwards, our group closed many issues(tasks) that had been completed and made sure that there were no issues with the artifacts that we will be submitting for this phase.
 
 <b>Burndown Chart</b> 
@@ -85,15 +85,5 @@ There were a lot of problems during the beginning of phase 2 and they are descri
 	issues should be tackled with. The unfamiliarity of the frameworks and libraries that we decided to
 	use did not help with the situation at all.  All these factors were the causes of the low productivity 
 	in the beginning of phase 2 as demonstrated by the burn-down chart. 
-
-c. 	
-		The problems described in part b can be mostly attributed to every member of the team had a busy 
-	semester schedule throughout phase 2. As a result, we did not have sufficient time to communicate 
-	with each other in between meetings which lead to lower productivity than expected. Ideally, we would 
-	do a scrum meeting everyday and the scrum master would keep us on task constantly. In addition, this 
-	is the first time doing agile development for many members of our group and thus this sense of 
-	unfamiliarity had definitely slowed us down somewhat.
-		Moving forward, I suggest we hold scrum and status meetings more frequently than they were in phase 2.
-	In addition, we need to improve on planning out issues in a logical order so that we can minimize 
-	confusion and miscommunications. To do that, I suggest we allocate more time for creating issues than
-	in phase 2 and we need to get everyone on the same page during the planning process. 
+	
+c.	The problems described in part b can be mostly attributed to every member of the team had a busy semester 		schedule throughout phase 2. As a result, we did not have sufficient time to communicate with each other 		in between meetings which lead to lower productivity than expected. Ideally, we would do a scrum 		meeting everyday and the scrum master would keep us on task constantly. In addition, this is the first time 	doing agile development for many members of our group and thus this sense of unfamiliarity had definitely slowed 	us down somewhat. Moving forward, I suggest we hold scrum and status meetings more frequently than they were 		in phase 2. In addition, we need to improve on planning out issues in a logical order so that we can 			minimize confusion and miscommunications. To do that, I suggest we allocate more time for creating 		issues than in phase 2 and we need to get everyone on the same page during the planning process. 
