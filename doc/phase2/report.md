@@ -17,11 +17,15 @@ Description:
 We had an online conference call to discuss the responsibilities of each member in our group, and we wanted to decide on which web development frameworks to use in the process of building our web application. It was decided amongst the group that there should be 2 teams to handle the front-end and back-end development. The team responsible for back-end is Jason Phan, John, and Steven; front-end is Claudia and Jason Tran. The discussion on available frameworks along with online resources that would help us develop our application lead the group to let each team decide on which resources and frameworks they felt comfortable with to accomplish their part. The group will meet again in the upcoming days to decide on which frameworks they want to work with. 
 
 Meeting #2
+
 Date and Time: October 23 at 10PM
+
 Location: Skype
+
 Attendance: Entire group
 
 Description:
+
 The purpose of this group meeting was to decide on what tasks had to be completed in order to have our product working, and to assign specific tasks to members in the group. Before tasks were assigned to individuals, we ranked each task’s difficulty to prioritize which tasks should be completed first, and to ensure that a task had a reasonable amount of individuals working on it. We split the tasks and marked them as “issues” on Github. Here is a link to the issues:
 https://github.com/csc301-fall-2015/project-team4-L0101/issues?q=is%3Aopen+is%3Aissue
 We had also finalized which tools and frameworks we would use for front-end and back-end development.
