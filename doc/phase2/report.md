@@ -48,7 +48,7 @@ a.
 	Another decision that have gone well was that we have decided to finish the backend or 
 	server-side of our web application first with minimum front-end elements for testing purposes. 
 	By ensuring the backend is finished first, we can work on the front end knowing exactly what data 
-	will be available for retrieval in the server and by extension the database. 
+	will be available for retrieval in the server and by extension the database.
 	
 	There were a lot of problems during the beginning of phase 2 and they are described in part b. 
 	After some time, we have decided to hold a mandatory meeting where every member of the team would 
@@ -57,7 +57,7 @@ a.
 	the data model that I suggested in the beginning to something much simpler to work with. We also 
 	resolved the client-side and server-side communication issue and correct data will now be displayed 
 	to its corresponding user. During the meeting we have resolved 7 issues on Github outright and made 
-	progress in all the remaining issues. 
+	progress in all the remaining issues.
 	
  b. 
 	Before we started working on the project, we have create a lot of issues on Github and assigned them 
