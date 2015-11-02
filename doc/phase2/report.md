@@ -44,6 +44,11 @@ In our final meeting before phase 2’s due date, we discussed the current state
 
 <b>Burndown Chart</b> 
 
+For every issue, we decided that all S, M, and L tasks are converted into 1, 2, 3 story points respectively. For each issue, 2 members (one front-end and back-end person) were assigned to the task.
+
+Link to Burndown Charts:
+https://docs.google.com/spreadsheets/d/1525kUl6YxWoTCanoGd8itl-W3v0r-yQvKZjNVCoBgag/edit?usp=sharing
+
 <b>Review & Retrospective</b>
 
 1) Our plan started off with our MVP. One of our group members (claudia) decided to draw the UI as a 
