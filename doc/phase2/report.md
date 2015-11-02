@@ -35,29 +35,11 @@ Everyone contributed to these issues.
 
 2)
 a. 
-    One of our major decisions in the early phase of the project is to use an existing 
-	open-source tool that can scaffold our web application project by abstracting away 
-	the management of different technologies and libraries required for the project. 
-	This decision has worked really well so far since we were able to get the project up 
-	to speed faster than anticipated. In addition, the Yeoman generator-angular-fullstack 
-	(https://github.com/DaftMonk/generator-angular-fullstack) 
-	has provided us with a skeleton of a web app so we can focus on designing and implementing 
-	our project by saving us time on setting and hooking up technologies such as angularJS 
-	and MongoDB required by the project.
+    One of our major decisions in the early phase of the project is to use an existing open-source tool that can scaffold our web application project by abstracting away the management of different technologies and libraries required for the project. This decision has worked really well so far since we were able to get the project up to speed faster than anticipated. In addition, the Yeoman generator-angular-fullstack (https://github.com/DaftMonk/generator-angular-fullstack) has provided us with a skeleton of a web app so we can focus on designing and implementing our project by saving us time on setting and hooking up technologies such as angularJS and MongoDB required by the project.
 	
-	Another decision that have gone well was that we have decided to finish the backend or 
-	server-side of our web application first with minimum front-end elements for testing purposes. 
-	By ensuring the backend is finished first, we can work on the front end knowing exactly what data 
-	will be available for retrieval in the server and by extension the database.
-	
-	There were a lot of problems during the beginning of phase 2 and they are described in part b. 
-	After some time, we have decided to hold a mandatory meeting where every member of the team would 
-	be present for making crucial technical as well as design decisions regarding the project. 
-	This meeting occurred on Thursday, October 29 and it had gone very well. We have decided to change 
-	the data model that I suggested in the beginning to something much simpler to work with. We also 
-	resolved the client-side and server-side communication issue and correct data will now be displayed 
-	to its corresponding user. During the meeting we have resolved 7 issues on Github outright and made 
-	progress in all the remaining issues.
+Another decision that have gone well was that we have decided to finish the backend or server-side of our web application first with minimum front-end elements for testing purposes. By ensuring the backend is finished first, we can work on the front end knowing exactly what data will be available for retrieval in the server and by extension the database.
+
+There were a lot of problems during the beginning of phase 2 and they are described in part b. After some time, we have decided to hold a mandatory meeting where every member of the team would be present for making crucial technical as well as design decisions regarding the project. This meeting occurred on Thursday, October 29 and it had gone very well. We have decided to change the data model that I suggested in the beginning to something much simpler to work with. We also resolved the client-side and server-side communication issue and correct data will now be displayed to its corresponding user. During the meeting we have resolved 7 issues on Github outright and made progress in all the remaining issues.
 	
  b. 
 	Before we started working on the project, we have create a lot of issues on Github and assigned them 
