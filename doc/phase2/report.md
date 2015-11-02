@@ -8,6 +8,40 @@ The way that we estimated our task size was based upon a team evaluation. The Sc
 
 <b>Update Meetings</b>
 
+Meeting #1
+Date and Time: October 20 at 9:10 PM
+Location: Skype
+Attendance: Entire group
+
+Description: 
+We had an online conference call to discuss the responsibilities of each member in our group, and we wanted to decide on which web development frameworks to use in the process of building our web application. It was decided amongst the group that there should be 2 teams to handle the front-end and back-end development. The team responsible for back-end is Jason Phan, John, and Steven; front-end is Claudia and Jason Tran. The discussion on available frameworks along with online resources that would help us develop our application lead the group to let each team decide on which resources and frameworks they felt comfortable with to accomplish their part. The group will meet again in the upcoming days to decide on which frameworks they want to work with. 
+
+Meeting #2
+Date and Time: October 23 at 10PM
+Location: Skype
+Attendance: Entire group
+
+Description:
+The purpose of this group meeting was to decide on what tasks had to be completed in order to have our product working, and to assign specific tasks to members in the group. Before tasks were assigned to individuals, we ranked each task’s difficulty to prioritize which tasks should be completed first, and to ensure that a task had a reasonable amount of individuals working on it. We split the tasks and marked them as “issues” on Github. Here is a link to the issues:
+https://github.com/csc301-fall-2015/project-team4-L0101/issues?q=is%3Aopen+is%3Aissue
+We had also finalized which tools and frameworks we would use for front-end and back-end development.
+
+Meeting #3
+Date and Time: October 29 at 10PM
+Location: Skype
+Attendance: Entire group
+
+Description:
+The purpose of this meeting was to collaborate to eliminate issues that required both front-end and back-end integration. Since there were many new technologies to be learned, this was a great way for group members with experience to help and clarify the use of these tools and help each other with difficult tasks. The conference call was extremely effective as we closed 7 issues; #12, #13, #14, #17, #18, #20, and #27 to be specific. 
+
+Meeting #4
+Date and Time: November 1 at 11PM
+Location: Skype
+Attendance: Entire group
+
+Description:
+In our final meeting before phase 2’s due date, we discussed the current state of our project. In terms of the MVP and stability of our project, everything is going as expected. The functionality we wanted for this phase is complete, and there are currently a few adjustments being made to the user interface. There was live testing of our web application during the call to ensure that it was functioning as expected before we submitted our project code. Afterwards, our group closed many issues(tasks) that had been completed and made sure that there were no issues with the artifacts that we will be submitting for this phase.
+
 <b>Burndown Chart</b> 
 
 <b>Review & Retrospective</b>
