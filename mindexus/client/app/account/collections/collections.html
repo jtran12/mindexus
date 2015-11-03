@@ -85,7 +85,7 @@
           <!-- <strong>Rating:</strong> {{entry.rating}} stars<br> -->
           <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
           <strong>Seen It:</strong> {{entry.seenIt}}
-
+          <strong>Personal Note:</strong> {{entry.note}}
           <br><br>
           <button class="btn btn-warning" ng-click="editEntry(entry)" aria-label="Edit">Edit Entry</button>
           <button class="btn btn-info" ng-click="hasSeen(entry)" aria-label="Seen">Seen It</button>
@@ -110,16 +110,10 @@
             <div class = "col-sm-4">
               <select name="category" ng-model="newCategory" class="form-control">
                 <option value="" disabled selected>+ Choose One</option>
-                <option value="Action">Action</option>
-                <option value="Adventure">Adventure</option>
-                <option value="Comedy">Comedy</option>
-                <option value="Crime">Crime</option>
-                <option value="Historical">Historical</option>
-                <option value="Horror">Horror</option>
-                <option value="Mystery">Mystery</option>
-                <option value="Romance">Romance</option>
-                <option value="Science Fiction">Science Fiction</option>
-                <option value="Satire">Satire</option>
+                <option value="TV Show">TV Show</option>
+                <option value="Movie">Movie</option>
+                <option value="Book">Book</option>
+                <option value="Video Game">Video Game</option>
               </select>
             </div>
             <label class = "col-sm-2 control-label">or New Category:</label>
@@ -132,13 +126,25 @@
             <div class = "col-sm-10">
               <input type="text" ng-model="newKeywordsString" name ="newKeywordsString" placeholder="Add Keywords" class="form-control">
             </div>
+
+          <div class="form-group">
+            <label class = "col-sm-2 control-label">Personal Note:</label>
+            <div class = "col-sm-10">
+              <input type="text" ng-model="newNote" name ="newNote" placeholder="Enter Personal Note" class="form-control" required>
+            </div>
+          </div>  
+
+
           </div>     
           <div class="form-group">
             <label class = "col-sm-2 control-label">Rating (0-5) (optional):</label>
             <div class = "col-sm-10">
                 <uib-rating ng-model="newRating" max="5" on-hover="hoveringOver(value)" on-leave="overStar = null" aria-labelledby="default-rating" ></uib-rating>
             </div>
-          </div>    
+          </div>
+
+
+
           <div class="form-group"> 
             <div class="col-sm-offset-2 col-sm-10">
               <div class="checkbox">

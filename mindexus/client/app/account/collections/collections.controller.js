@@ -16,6 +16,7 @@ angular.module('mindexusApp')
     $scope.newKeywords = [];
     $scope.newRating = 0;
     $scope.newSeenIt = false;
+    $scope.newNote = '';
 
     $scope.ratingStates = [{stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty'}];
 
@@ -65,7 +66,8 @@ angular.module('mindexusApp')
         category: $scope.newCategory,
         keywords: $scope.newKeywords,
         rating: $scope.newRating,
-        seenIt: $scope.newSeenIt
+        seenIt: $scope.newSeenIt,
+        note: $scope.newNote
       });
       $scope.refreshEntries();
       $scope.newEntry = '';
@@ -74,6 +76,7 @@ angular.module('mindexusApp')
       $scope.newKeywords = [];
       $scope.newRating = 0;
       $scope.newSeenIt = false;
+      $scope.newNote = '';
     };
 
     $scope.deleteEntry = function(entry) {
