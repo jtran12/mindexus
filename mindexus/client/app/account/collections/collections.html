@@ -84,7 +84,7 @@
           
           <!-- <strong>Rating:</strong> {{entry.rating}} stars<br> -->
           <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
-          <strong>Seen It:</strong> {{entry.seenIt}}
+          <strong>Seen It:</strong> {{entry.seenIt}} <br>
           <strong>Personal Note:</strong> {{entry.note}}
           <br><br>
           <button class="btn btn-warning" ng-click="editEntry(entry)" aria-label="Edit">Edit Entry</button>
@@ -127,6 +127,7 @@
               <input type="text" ng-model="newKeywordsString" name ="newKeywordsString" placeholder="Add Keywords" class="form-control">
             </div>
 
+          <br>
           <div class="form-group">
             <label class = "col-sm-2 control-label">Personal Note:</label>
             <div class = "col-sm-10">
