@@ -3,6 +3,7 @@
 angular.module('mindexusApp')
   .controller('CollectionsCtrl', function ($scope, Auth, $http) {
     $scope.isCollapsed = true;
+    $scope.isCollapsedEdit = true;
     $scope.getCurrentUser = Auth.getCurrentUser;
 
     $scope.go = function(path){
@@ -98,25 +99,51 @@ angular.module('mindexusApp')
     }
 
     $scope.editEntry = function(entry) {
-      //TODO Edit the entry menu
+      $scope.isCollapsedEdit = false;
+      $scope.id = entry._id;
+      setTimeout(function() {
+        editName.value = entry.name;
+        editCategory.value =  entry.category;
+        editNewCategory.value = entry.category;
+        editKeywords.value = entry.keywords;
+        editNote.value = entry.note;
+        editSeenIt.checked = entry.seenIt;
+        $scope.newRating = entry.rating;
+      }, 100);
+    }
+
+
+    $scope.edit = function() {
+      $http.put('/api/entries/' + $scope.id, {
+        name: editName.value.capitalize(true),  
+        category: editNewCategory.value,
+        keywords: editKeywords.value,
+        rating: $scope.newRating,
+        seenIt: editSeenIt.checked,
+        note: editNote.value
+      });
+
+      // Reset
+      $scope.id = null;
+      $scope.newRating = 0;
+
+      $scope.isCollapsedEdit = true;
+      $scope.refreshEntries();
     }
 
     $scope.hasSeen = function(entry){
       entry.seenIt = true;
 
-      // make put request to server
+      // EDIT request to server
       $http.put('/api/entries/' + entry._id, {
         seenIt: true,
-        id: entry._id
       });
 
       $scope.refreshEntries();
     }
 
-    $scope.sortEntries = function() {
-      // sort.value = lowToHigh, highToLow, title, dateAdded
 
-      // use $scope.seenIt, $scope.toSee sort them and refresh
+    $scope.sortEntries = function() {
       
       if (sort.value === 'lowToHigh') {
         var resultToSee = [];
