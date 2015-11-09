@@ -10,12 +10,11 @@
   <div class="row">
     <div class="hero-unit col-sm-2 container-fluid" style="height: 100%">
       <strong><p>Sort By:</p></strong>
-      <select name="sort" ng-model="sortBy" class="form-control">
-        <option value="" disabled selected>+ Choose One</option>
-        <option value="lowToHigh">Ratings Low to High</option>
+      <select name="sort" id="sort" class="form-control">
+        <option value="lowToHigh" selected>Ratings Low to High</option>
         <option value="highToLow">Ratings High to High</option>
         <option value="title">Title</option>
-        <option value="dateAdded">Date Added</option>
+        <option value="dateNewToOld">Date (New to Old)</option>
       </select>
       <br>
       <strong><p>Filters:</p></strong>
@@ -53,7 +52,8 @@
         </uib-accordion-group>
       </uib-accordion>
       <br>
-      <button type="button" class="btn btn-danger btn-lg" ng-click="refreshEntries()" style="float: center">Collapse All</button>
+      <button type="button" class="btn btn-primary btn-lg" ng-click="sortEntries()" style="float: center">Sort</button>
+      <button type="button" class="btn btn-danger btn-lg" ng-click="refreshEntries()" style="float: center">Reset</button>
       <button class="btn btn-info btn-lg" href="/collections" aria-label="Remove" style="float: center;">My Indexes</button>
       <button type="button" class="btn btn-warning btn-lg" ng-click="isCollapsed = !isCollapsed" style="float: center;">+New Entry</button>
 

@@ -113,6 +113,106 @@ angular.module('mindexusApp')
       $scope.refreshEntries();
     }
 
+    $scope.sortEntries = function() {
+      // sort.value = lowToHigh, highToLow, title, dateAdded
 
+      // use $scope.seenIt, $scope.toSee sort them and refresh
+      
+      if (sort.value === 'lowToHigh') {
+        var resultToSee = [];
+        var resultSeen = [];
+
+        var ratingNum = 0;
+        while (ratingNum < 6) {
+          // Loop for TO SEE
+          for (var i = 0; i < $scope.toSee.length; i++) {
+            if (ratingNum == $scope.toSee[i].rating) {
+              resultToSee.push($scope.toSee[i]);
+            }
+          }
+          // Loop for SEEN IT
+          for (var i = 0; i < $scope.seenIt.length; i++) {
+            if (ratingNum == $scope.seenIt[i].rating) {
+              resultSeen.push($scope.seenIt[i]);
+            }
+          }
+          ratingNum += 1;
+        }
+        $scope.toSee = resultToSee;
+        $scope.seenIt = resultSeen;
+
+
+      } else if (sort.value === 'highToLow') {
+        var resultToSee = [];
+        var resultSeen = [];
+
+        var ratingNum = 5;
+        while (ratingNum > -1) {
+          // Loop for TO SEE
+          for (var i = 0; i < $scope.toSee.length; i++) {
+            if (ratingNum == $scope.toSee[i].rating) {
+              resultToSee.push($scope.toSee[i]);
+            }
+          }
+          // Loop for SEEN IT
+          for (var i = 0; i < $scope.seenIt.length; i++) {
+            if (ratingNum == $scope.seenIt[i].rating) {
+              resultSeen.push($scope.seenIt[i]);
+            }
+          }
+          ratingNum -= 1;
+        }
+        $scope.toSee = resultToSee;
+        $scope.seenIt = resultSeen;
+
+
+      } else if (sort.value == 'title') {
+        var resultToSee = [];
+        var resultSeen = [];
+        var titles1 = [];
+        var titles2 = [];
+
+        for (var i = 0; i < $scope.toSee.length; i++) {
+          titles1.push($scope.toSee[i].name);
+        }
+        titles1 = titles1.sort();
+
+        for (var i = 0; i < $scope.seenIt.length; i++) {
+          titles2.push($scope.seenIt[i].name);
+        }
+        titles2 = titles2.sort();
+
+        var x = 0;
+        while (x < titles1.length) {
+          for (var i = 0; i < titles1.length; i++) {
+            if ($scope.toSee[i].name == titles1[x]) {
+              resultToSee.push($scope.toSee[i]);
+              x += 1;
+            }
+          }
+        }
+
+        var x = 0;
+        while (x < titles2.length) {
+          for (var i = 0; i < titles2.length; i++) {
+            if ($scope.seenIt[i].name == titles2[x]) {
+              resultSeen.push($scope.seenIt[i]);
+              x += 1;
+            }
+          }
+        }
+
+        $scope.toSee = resultToSee;
+        $scope.seenIt = resultSeen;
+        
+
+      } else if (sort.value == 'dateNewToOld') {
+        $scope.toSee = $scope.toSee.reverse();
+        $scope.seenIt = $scope.seenIt.reverse();
+
+      }
+
+      $scope.isCollapsed = true;
+    }
     
   });
