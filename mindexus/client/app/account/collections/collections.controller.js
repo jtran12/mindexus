@@ -9,7 +9,9 @@ angular.module('mindexusApp')
       $location.path(path);
     }
 
-    $scope.userEntries = [];
+    $scope.seenIt = [];
+    $scope.toSee = [];
+
     $scope.newEntry = '';
     $scope.newCategory = '';
     $scope.newKeywordsString = "";
@@ -24,31 +26,42 @@ angular.module('mindexusApp')
      return (lower ? this.toLowerCase() : this).replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
     };
     
+    // Gets all the entries for the current client.
     $http.get('/api/entries').success(function(userEntries) {
       var userEntriesString = JSON.stringify(userEntries);
       var userEntriesMap = JSON.parse(userEntriesString);
-      var result = [];
+      var resultSeen = [];
+      var resultToSee = [];
+
       for(var i = 0; i < userEntriesMap.length; i++){
-        if(userEntriesMap[i].email == Auth.getCurrentUser().email){
-          result.push(userEntriesMap[i]);
+        if(userEntriesMap[i].email == Auth.getCurrentUser().email && userEntriesMap[i].seenIt) { // seen it TRUE
+          resultSeen.push(userEntriesMap[i]);
+        } else if (userEntriesMap[i].email == Auth.getCurrentUser().email && !userEntriesMap[i].seenIt) {
+          resultToSee.push(userEntriesMap[i]);
         }
       }
-      //alert(JSON.stringify(result));
-      $scope.userEntries = result;
+
+      $scope.seenIt = resultSeen;
+      $scope.toSee = resultToSee;
     });
 
     $scope.refreshEntries=function(){
       $http.get('/api/entries').success(function(userEntries) {
         var userEntriesString = JSON.stringify(userEntries);
         var userEntriesMap = JSON.parse(userEntriesString);
-        var result = [];
+        var resultSeen = [];
+        var resultToSee = [];
+
         for(var i = 0; i < userEntriesMap.length; i++){
-          if(userEntriesMap[i].email == Auth.getCurrentUser().email){
-            result.push(userEntriesMap[i]);
+          if(userEntriesMap[i].email == Auth.getCurrentUser().email && userEntriesMap[i].seenIt){
+            resultSeen.push(userEntriesMap[i]);
+          } else if (userEntriesMap[i].email == Auth.getCurrentUser().email && !userEntriesMap[i].seenIt) {
+            resultToSee.push(userEntriesMap[i]);
           }
         }
-        //alert(JSON.stringify(result));
-        $scope.userEntries = result;
+
+        $scope.seenIt = resultSeen;
+        $scope.toSee = resultToSee;
       });
       $scope.isCollapsed = true;
     };
@@ -90,6 +103,14 @@ angular.module('mindexusApp')
 
     $scope.hasSeen = function(entry){
       entry.seenIt = true;
+
+      // make put request to server
+      $http.put('/api/entries/' + entry._id, {
+        seenIt: true,
+        id: entry._id
+      });
+
+      $scope.refreshEntries();
     }
 
 

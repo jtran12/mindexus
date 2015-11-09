@@ -27,8 +27,6 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <!--<li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
-        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li> //-->
         <li ng-show="isLoggedIn()"><p class="navbar-text">{{ getCurrentUser().name }}</p> </li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="/home" ng-click="logout()">Logout</a></li>
@@ -36,3 +34,12 @@
     </div>
   </div>
 </div>
+
+<!-- footer -->
+<div class="container footer navbar-fixed-bottom">
+    <p>MINdEXUS |
+      ivywireline jtran12 jasonphan johnibr MsClaudz |
+       <a href="https://github.com/csc301-fall-2015/project-team4-L0101"> github</a></p>
+</div>
+
+
