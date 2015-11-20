@@ -11,6 +11,7 @@ var EntrySchema = new Schema({
   rating: {type: Number, min: 0, max: 5, default: 0},
   date: { type: Date, default: Date.now },
   seenIt: Boolean,
+  note: String,
   //Premade stuff
   info: String,
   active: Boolean

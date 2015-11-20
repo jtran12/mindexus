@@ -16,7 +16,7 @@ angular.module('mindexusApp')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/');
+          $location.path('/collections');
         })
         .catch( function(err) {
           err = err.data;
