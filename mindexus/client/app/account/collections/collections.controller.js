@@ -142,6 +142,17 @@ angular.module('mindexusApp')
       $scope.refreshEntries();
     }
 
+    $scope.hasentSeen = function(entry){
+      entry.seenIt = false;
+
+      // EDIT request to server
+      $http.put('/api/entries/' + entry._id, {
+        seenIt: false,
+      });
+
+      $scope.refreshEntries();
+    }
+
 
     $scope.sortEntries = function() {
       
