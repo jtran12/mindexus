@@ -42,6 +42,20 @@ angular.module('mindexusApp')
 
     });
     
+    $http.get('/api/customindices').success(function(data) {
+      var userListString = JSON.stringify(data);
+      var userListMap = JSON.parse(userListString);
+      var result = [];
+
+      for(var i = 0; i < userListMap.length; i++){
+        if(userListMap[i].email == Auth.getCurrentUser().email) {
+          result.push(userListMap[i]);
+        }
+      }
+
+      $scope.customIndices = result;
+    });
+
     $scope.refreshEntries=function(){
       $http.get('/api/entries').success(function(userEntries) {
         var userEntriesString = JSON.stringify(userEntries);
@@ -60,14 +74,14 @@ angular.module('mindexusApp')
     };
 
     $scope.refreshList = function() {
-      $http.get('/api/customindex').success(function(userLists) {
+      $http.get('/api/customindices').success(function(userLists) {
         var userListsString = JSON.stringify(userLists);
         var userListsMap = JSON.parse(userListsString);
         var result = [];
 
         for (var i = 0; i < userListsMap.length; i++) {
           if (userListsMap[i].email == Auth.getCurrentUser().email) {
-            result.push(userListMaps[i]);
+            result.push(userListsMap[i]);
           }
         }
 
@@ -84,7 +98,7 @@ angular.module('mindexusApp')
       $scope.newKeywords = ($scope.newKeywordsString).split(" ");
 
 
-      $http.post('/api/customindex', { 
+      $http.post('/api/customindices', { 
         name: ($scope.newCustList).capitalize(true), 
         keywords: $scope.newKeywords,
         public_rating: $scope.newRating,
@@ -93,13 +107,14 @@ angular.module('mindexusApp')
         email: Auth.getCurrentUser().email
       });
 
-      $scope.refreshList();
+      
       $scope.newCustList = '';
       $scope.newKeywordsString = "";
       $scope.newKeywords = [];
       $scope.newDescription = '';
       $scope.newRating = 0;
       $scope.active = false;
+      $scope.refreshList();
 
     };
 

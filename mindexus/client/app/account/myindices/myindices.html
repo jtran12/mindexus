@@ -39,7 +39,7 @@
           <div class="form-group"> 
             <div class="col-sm-offset-2 col-sm-10">
               <div class="checkbox">
-                <label><input type="checkbox" ng-model="newSeenIt">Active</label>
+                <label><input type="checkbox" ng-model="active">Active</label>
               </div>
             </div>
           </div>     
@@ -91,17 +91,15 @@
       <h1>Custom Indices</h1><hr>
 
       <!-- CUSTOM INDICES -->
-      <uib-accordion close-others="false" ng-repeat="entry in customIndices">
+      <uib-accordion close-others="false" ng-repeat="cust in customIndices">
         <uib-accordion-group  class = "col-sm-13">
-          <button class="btn btn-danger btn-sm" ng-click="deleteCustomList(custList)" aria-label="Remove" style="float: right;">Delete Custom List</button>
+          <button class="btn btn-danger btn-sm" ng-click="" aria-label="Remove" style="float: right;">Delete Custom List</button>
           <uib-accordion-heading>
-            <strong>Name:</strong> {{custList.name}}
-            <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+            <strong>Name:</strong> {{cust.name}}
           </uib-accordion-heading>
-            <strong>Rating:</strong> <uib-rating ng-model="custList.public_rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
-            <strong>Keywords:</strong> {{custList.keywords}} <br>
-            <strong>Description:</strong> {{custList.description}} <br>
-            <strong>Active:</strong> {{custList.active}} <br>
+            <strong>Keywords:</strong> {{cust.keywords}} <br>
+            <strong>Description:</strong> {{cust.description}} <br>
+            <strong>Active:</strong> {{cust.active}} <br>
             <br><br>
         </uib-accordion-group>
       </uib-accordion>
