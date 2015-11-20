@@ -46,6 +46,7 @@ angular.module('mindexusApp')
       $scope.toSee = resultToSee;
     });
 
+    
     $scope.refreshEntries=function(){
       $http.get('/api/entries').success(function(userEntries) {
         var userEntriesString = JSON.stringify(userEntries);
