@@ -1,37 +1,23 @@
 'use strict';
 
+
 angular.module('mindexusApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth, $http) {
-    $scope.menu = [/*{
-      'title': 'Home',
-      'link': '/'
-    }*/];
+	.config(function($routeProvider){
 
-    $scope.isCollapsed = true;
-    $scope.isLoggedIn = Auth.isLoggedIn;
-    $scope.isAdmin = Auth.isAdmin;
-    $scope.isUser = Auth.isUser;
-    $scope.getCurrentUser = Auth.getCurrentUser;
-
-    $scope.searchedEntries = [];
-
-    $scope.logout = function() {
-      Auth.logout();
-      $location.path('/home');
-    };
-
-    $scope.isActive = function(route) {
-      return route === $location.path();
-    };
+	});
 
 
-    // Searches all the names of all the entries with substrings of search.value.
-    $scope.search = function() {
+  .controller('ResultsCtrl', function ($scope, $http) {
+    $scope.message = 'Hello';
 
-      if (search.value.trim() !== "") {
+    $scope.handler = function() {
+    	$http.get('/results/:query').success(function(resultdata){
+
+    		alert($routeParams.query);
+    	});
 
 
-        $location.path('/results');
+
 
 /*        // Gets all the entries in the db.
         $http.get('/api/entries').success(function(userEntries) {
@@ -60,10 +46,6 @@ angular.module('mindexusApp')
 
           $scope.searchedEntries = result;
         });*/
-
-    } else {
-      alert("Please rephrase your search parameter.");
-    }
   }
 
   });
