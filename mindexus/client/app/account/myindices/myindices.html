@@ -6,204 +6,67 @@
   </div>
 </header>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="hero-unit col-sm-2 container-fluid" style="height: 100%">
-      <strong><p>Sort By:</p></strong>
-      <select name="sort" id="sort" class="form-control">
-        <option value="lowToHigh" selected>Ratings Low to High</option>
-        <option value="highToLow">Ratings High to High</option>
-        <option value="title">Title</option>
-        <option value="dateNewToOld">Date (New to Old and Old to New)</option>
-      </select>
-      <br>
-      <strong><p>Filters:</p></strong>
-      <select name="filters" ng-model="filterCategory" class="form-control">
-        <option value="" disabled selected>+ Choose One</option>
-        <option value="keyword">Keyword</option>
-        <option value="category">Category</option>
-      </select>
-      <br>
-      <!--TODO: Link all the By Category and Keyword to do the stuff intended-->
-      <uib-accordion close-others="false" ng-model="filterCategory">
-          <uib-accordion-group  class = "col-sm-13">
-            <uib-accordion-heading>
-              Browse Entries:
-              <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-th': !status.open}"></i>
+<button type="button" class="btn btn-warning btn-lg" ng-click="isCollapsed = !isCollapsed" style="float: center;">+New Custom List</button>
 
-            </uib-accordion-heading>
-              <ul>
-                <li><font color="black">By Category</font></li>
-                <li><font color="black">By Keyword</font></li>
-              </ul>
-          </uib-accordion-group>
-      </uib-accordion>
-      <uib-accordion close-others="false" ng-model="filterCategory">
-        <uib-accordion-group  class = "col-sm-13">
-          <uib-accordion-heading>
-            <strong>Browse Indexes:</strong>
-            <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-list-alt': !status.open}"></i>
+<!-- ADD TO CUSTOM LIST FIELDS -->
+<div class="container-fluid col-sm-5">
+  <br>
+    <!--  CUSTOM LIST INPUT -->  
+    <div uib-collapse="isCollapsed">
+      <div class="well well-lg">
+        <h2>Add Custom List</h2>
+        <form class="form-horizontal" role="form" ng-submit="addToCustom()">
+          <div class="form-group">
+            <label class = "col-sm-2 control-label">Name/Title:</label>
+            <div class = "col-sm-10">
+              <input type="text" ng-model="newCustList" name ="newCustList" placeholder="Enter Custom List Title" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class = "col-sm-2 control-label">Keywords (separate with space):</label>
+            <div class = "col-sm-10">
+              <input type="text" ng-model="newKeywordsString" name ="newKeywordsString" placeholder="Add Keywords" class="form-control">
+            </div>
+          </div>
 
-          </uib-accordion-heading>
-            <ul>
-              <li><font color="black">By Category</font></li>
-              <li><font color="black">By Keyword</font></li>
-            </ul>
-        </uib-accordion-group>
-      </uib-accordion>
-      <br>
-      <button type="button" class="btn btn-primary btn-lg" ng-click="sortEntries()" style="float: center">Sort</button>
-      <button type="button" class="btn btn-danger btn-lg" ng-click="refreshEntries()" style="float: center">Reset</button>
-      <button class="btn btn-info btn-lg" href="/collections" aria-label="Remove" style="float: center;">My Indexes</button>
-      <button type="button" class="btn btn-warning btn-lg" ng-click="isCollapsed = !isCollapsed" style="float: center;">+New Entry</button>
+          <div class="form-group">
+            <label class = "col-sm-2 control-label">Description</label>
+            <div class = "col-sm-10">
+              <input type="text" ng-model="newDescription" name ="newDescription" placeholder="Add Description" class="form-control">
+            </div>
+          </div>
 
+          <div class="form-group"> 
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label><input type="checkbox" ng-model="newSeenIt">Active</label>
+              </div>
+            </div>
+          </div>     
+          <div class="form-group">
+            <div class = "col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-primary" ng-click="addToCustom()">Add</button>
+              <button type="button" class="btn btn-danger" ng-click="isCollapsed = !isCollapsed">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
 
 
 
-    <div class="container-fluid col-sm-5">
+
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="container-fluid col-sm-6">
       <br>
-        <!--  Entries Input -->  
-        <div uib-collapse="isCollapsed">
-          <div class="well well-lg">
-            <h2>Add Entry</h2>
-            <form class="form-horizontal" role="form" ng-submit="addEntry()">
-              <div class="form-group">
-                <label class = "col-sm-2 control-label">Name/Title:</label>
-                <div class = "col-sm-10">
-                  <input type="text" ng-model="newEntry" name ="newEntry" placeholder="Enter media name" class="form-control" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class = "col-sm-2 control-label">Category:</label>
-                <div class = "col-sm-4">
-                  <select name="category" ng-model="newCategory" class="form-control">
-                    <option value="" disabled selected>+ Choose One</option>
-                    <option value="TV Show">TV Show</option>
-                    <option value="Movie">Movie</option>
-                    <option value="Book">Book</option>
-                    <option value="Video Game">Video Game</option>
-                  </select>
-                </div>
-                <label class = "col-sm-2 control-label">or New Category:</label>
-                <div class = "col-sm-4">
-                  <input type="text" ng-model="newCategory" name ="newCategory" placeholder="Enter media Category" class="form-control">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class = "col-sm-2 control-label">Keywords (separate with space):</label>
-                <div class = "col-sm-10">
-                  <input type="text" ng-model="newKeywordsString" name ="newKeywordsString" placeholder="Add Keywords" class="form-control">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class = "col-sm-2 control-label">Personal Note:</label>
-                <div class = "col-sm-10">
-                  <input type="text" ng-model="newNote" name ="newNote" placeholder="Enter Personal Note" class="form-control" required>
-                </div> 
-              </div> 
-          
-              <div class="form-group">
-                <label class = "col-sm-2 control-label">Rating (0-5) (optional):</label>
-                <div class = "col-sm-10">
-                    <uib-rating ng-model="newRating" max="5" on-hover="hoveringOver(value)" on-leave="overStar = null" aria-labelledby="default-rating" ></uib-rating>
-                </div>
-              </div>
-
-              <div class="form-group"> 
-                <div class="col-sm-offset-2 col-sm-10">
-                  <div class="checkbox">
-                    <label><input type="checkbox" ng-model="newSeenIt">Seen it already</label>
-                  </div>
-                </div>
-              </div>     
-              <div class="form-group">
-                <div class = "col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-primary">Add</button>
-                  <button type="button" class="btn btn-danger" ng-click="isCollapsed = !isCollapsed">Cancel</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <!-- Entries edit-->
-        <div uib-collapse="isCollapsedEdit">
-          <div class="well well-lg">
-            <h2>Edit Entry</h2>
-            <form class="form-horizontal" role="form" ng-submit="addEntry()">
-              <div class="form-group">
-                <label class = "col-sm-2 control-label">Name/Title:</label>
-                <div class = "col-sm-10">
-                  <input type="text" id="editName" placeholder="Enter media name" class="form-control" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class = "col-sm-2 control-label">Category:</label>
-                <div class = "col-sm-4">
-                  <select name="category" id="editCategory" class="form-control" disabled>
-                    <option value="" disabled selected>+ Choose One</option>
-                    <option value="TV Show">TV Show</option>
-                    <option value="Movie">Movie</option>
-                    <option value="Book">Book</option>
-                    <option value="Video Game">Video Game</option>
-                  </select>
-                </div>
-                <label class = "col-sm-2 control-label">or New Category:</label>
-                <div class = "col-sm-4">
-                  <input type="text" id="editNewCategory" placeholder="Enter media Category" class="form-control">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class = "col-sm-2 control-label">Keywords (separate with space):</label>
-                <div class = "col-sm-10">
-                  <input type="text" id="editKeywords" placeholder="Add Keywords" class="form-control">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class = "col-sm-2 control-label">Personal Note:</label>
-                <div class = "col-sm-10">
-                  <input type="text" id="editNote" placeholder="Enter Personal Note" class="form-control" required>
-                </div> 
-              </div> 
-          
-              <div class="form-group">
-                <label class = "col-sm-2 control-label">Rating (0-5) (optional):</label>
-                <div class = "col-sm-10">
-                    <uib-rating id="editStars" ng-model="newRating" max="5" on-hover="hoveringOver(value)" on-leave="overStar = null" aria-labelledby="default-rating" ></uib-rating>
-                </div>
-              </div>
-
-              <div class="form-group"> 
-                <div class="col-sm-offset-2 col-sm-10">
-                  <div class="checkbox">
-                    <label><input type="checkbox" id="editSeenIt">Seen it already</label>
-                  </div>
-                </div>
-              </div>     
-              <div class="form-group">
-                <div class = "col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-primary" ng-click="edit()">Edit</button>
-                  <button type="button" class="btn btn-danger" ng-click="isCollapsedEdit = !isCollapsedEdit">Cancel</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-
-
         <h1>All Entries</h1><hr>
 
-        <!-- Entry info To See -->
-        <uib-accordion close-others="false" ng-repeat="entry in toSee">
+        <!-- ALL ENTRIES -->
+        <uib-accordion close-others="false" ng-repeat="entry in allEntries">
           <uib-accordion-group  class = "col-sm-13">
-            <button class="btn btn-danger btn-sm" ng-click="deleteEntry(entry)" aria-label="Remove" style="float: right;">Delete Entry</button>
             <uib-accordion-heading>
               <strong>Title:</strong> {{entry.name}}
               <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
@@ -212,11 +75,9 @@
               <strong>Category:</strong> {{entry.category}} <br>
               <strong>Keywords:</strong> {{entry.keywords}} <br>
               <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
-              <strong>Seen It:</strong> {{entry.seenIt}} <br>
               <strong>Personal Note:</strong> {{entry.note}}
               <br><br>
-              <button class="btn btn-warning" ng-click="editEntry(entry)" aria-label="Edit">Edit Entry</button>
-              <button class="btn btn-info" ng-click="hasSeen(entry)" aria-label="Seen">Seen It</button>
+              <button class="btn btn-warning" ng-click="editEntry(entry)" aria-label="Edit">ADD TO CUSTOM LIST</button>
           </uib-accordion-group>
         </uib-accordion>
 
@@ -225,27 +86,23 @@
 
 
 
-    <div class="col-sm-5 container-fluid">
+    <div class="col-sm-6 container-fluid">
       <br>
       <h1>Custom Indices</h1><hr>
 
-      <!-- Entry info Seen It -->
-      <uib-accordion close-others="false" ng-repeat="entry in seenIt">
+      <!-- CUSTOM INDICES -->
+      <uib-accordion close-others="false" ng-repeat="entry in customIndices">
         <uib-accordion-group  class = "col-sm-13">
-          <button class="btn btn-danger btn-sm" ng-click="deleteEntry(entry)" aria-label="Remove" style="float: right;">Delete Entry</button>
+          <button class="btn btn-danger btn-sm" ng-click="deleteCustomList(custList)" aria-label="Remove" style="float: right;">Delete Custom List</button>
           <uib-accordion-heading>
-            <strong>Title:</strong> {{entry.name}}
+            <strong>Name:</strong> {{custList.name}}
             <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
           </uib-accordion-heading>
-            <strong>Date Added:</strong> {{entry.date}} <br>
-            <strong>Category:</strong> {{entry.category}} <br>
-            <strong>Keywords:</strong> {{entry.keywords}} <br>
-            <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
-            <strong>Seen It:</strong> {{entry.seenIt}} <br>
-            <strong>Personal Note:</strong> {{entry.note}}
+            <strong>Rating:</strong> <uib-rating ng-model="custList.public_rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
+            <strong>Keywords:</strong> {{custList.keywords}} <br>
+            <strong>Description:</strong> {{custList.description}} <br>
+            <strong>Active:</strong> {{custList.active}} <br>
             <br><br>
-            <button class="btn btn-warning" ng-click="editEntry(entry)" aria-label="Edit">Edit Entry</button>
-            <button class="btn btn-info" ng-click="hasSeen(entry)" aria-label="Seen">Seen It</button>
         </uib-accordion-group>
       </uib-accordion>
 

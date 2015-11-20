@@ -5,11 +5,11 @@ var mongoose = require('mongoose'),
 
 var CustomindexSchema = new Schema({
   name: String,
-  entry_index: [Schema.ObjectId],
   keywords: [String],
   public_rating: {type: Number, min: 0, max: 5, default: 0},
   description: String,
-  active: Boolean
+  active: Boolean,
+  email: String
 });
 
 module.exports = mongoose.model('Customindex', CustomindexSchema);
