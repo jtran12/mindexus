@@ -31,7 +31,7 @@ angular.module('mindexusApp')
       if (search.value.trim() !== "") {
 
 
-        $location.path('/results');
+        $location.path('/results/' + search.value);
 
 /*        // Gets all the entries in the db.
         $http.get('/api/entries').success(function(userEntries) {

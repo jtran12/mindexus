@@ -2,24 +2,17 @@
 
 
 angular.module('mindexusApp')
-	.config(function($routeProvider){
 
-	});
+  .controller('ResultsCtrl', function ($scope, $http, $stateParams) {
 
+    
+    $scope.entryresults = [];
 
-  .controller('ResultsCtrl', function ($scope, $http) {
-    $scope.message = 'Hello';
-
-    $scope.handler = function() {
-    	$http.get('/results/:query').success(function(resultdata){
-
-    		alert($routeParams.query);
-    	});
+    //alert($stateParams.query);
 
 
-
-
-/*        // Gets all the entries in the db.
+    $scope.search = function() {
+        // Gets all the entries in the db.
         $http.get('/api/entries').success(function(userEntries) {
 
           var userEntriesString = JSON.stringify(userEntries);
@@ -31,7 +24,7 @@ angular.module('mindexusApp')
 
             // Make name and search parameter lowercase.
             var entryNameLower = userEntriesMap[i].name.toLowerCase();
-            var searchLowerCase = search.value.toLowerCase();
+            var searchLowerCase = ($stateParams.query).toLowerCase();
 
             // Check if entry matches search parameter, checking name at the moment.
             if (entryNameLower.indexOf(searchLowerCase) > -1) {
@@ -41,11 +34,10 @@ angular.module('mindexusApp')
             }
           }
 
-          alert(JSON.stringify(result));
-
-
-          $scope.searchedEntries = result;
-        });*/
-  }
+          //alert(JSON.stringify(result));
+          $scope.entryresults = result;
+        });
+  	}
+  	$scope.search();
 
   });

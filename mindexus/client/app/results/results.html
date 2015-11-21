@@ -1,3 +1,26 @@
-<div class="col-md-12">
-This is the results view.
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="page-head" id="banner">
+  <div class="container">
+    <h2>search results:</h2>
+  </div>
+</header>
+<div class="container-fluid col-sm-5">
+	<div class="row">
+		<uib-accordion close-others="false" ng-repeat="entry in entryresults">
+		  <uib-accordion-group  class = "col-sm-13">
+		    <uib-accordion-heading>
+		      <strong>Title:</strong> {{entry.name}}
+		      <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+		    </uib-accordion-heading>
+		      <strong>Date Added:</strong> {{entry.date}} <br>
+		      <strong>Category:</strong> {{entry.category}} <br>
+		      <strong>Keywords:</strong> {{entry.keywords}} <br>
+		      <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
+		      <strong>Seen It:</strong> {{entry.seenIt}} <br>
+		      <strong>Personal Note:</strong> {{entry.note}}
+		      <br><br>
+		  </uib-accordion-group>
+		</uib-accordion>
+	</div>
 </div>

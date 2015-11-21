@@ -8,7 +8,19 @@ angular.module('mindexusApp', [
   'ui.router',
   'ui.bootstrap'
 ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider ) {
+/*    $routeProvider
+      .when('/',{
+        templateUrl: 'app/account/collections/collections.html',
+        controller: 'CollectionsCtrl'
+      })
+      .when('/results/:query',{
+        templateUrl:'app/results/results.html',
+        controller: 'ResultsCtrl'
+      })
+
+      .otherwise({redirectTo:'/'});*/
+
     $urlRouterProvider
       .otherwise('/');
 
