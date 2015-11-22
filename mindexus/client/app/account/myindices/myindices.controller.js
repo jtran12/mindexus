@@ -25,7 +25,7 @@ angular.module('mindexusApp')
     String.prototype.capitalize = function(lower) {
      return (lower ? this.toLowerCase() : this).replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
     };
-    
+
     // Gets all the entries for the current client.
     $http.get('/api/entries').success(function(userEntries) {
       var userEntriesString = JSON.stringify(userEntries);
@@ -41,7 +41,7 @@ angular.module('mindexusApp')
       $scope.allEntries = result;
 
     });
-    
+
     $http.get('/api/customindices').success(function(data) {
       var userListString = JSON.stringify(data);
       var userListMap = JSON.parse(userListString);
@@ -98,8 +98,8 @@ angular.module('mindexusApp')
       $scope.newKeywords = ($scope.newKeywordsString).split(" ");
 
 
-      $http.post('/api/customindices', { 
-        name: ($scope.newCustList).capitalize(true), 
+      $http.post('/api/customindices', {
+        name: ($scope.newCustList).capitalize(true),
         keywords: $scope.newKeywords,
         public_rating: $scope.newRating,
         active: $scope.active,
@@ -107,7 +107,7 @@ angular.module('mindexusApp')
         email: Auth.getCurrentUser().email
       });
 
-      
+
       $scope.newCustList = '';
       $scope.newKeywordsString = "";
       $scope.newKeywords = [];
@@ -117,6 +117,12 @@ angular.module('mindexusApp')
       $scope.refreshList();
 
     };
+
+    $scope.deleteEntry = function(entry) {
+      alert(entry);
+      $http.delete('/api/customindices/' + entry._id);
+      $scope.refreshList();
+    }
 
 
 

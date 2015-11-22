@@ -93,7 +93,7 @@
       <!-- CUSTOM INDICES -->
       <uib-accordion close-others="false" ng-repeat="cust in customIndices">
         <uib-accordion-group  class = "col-sm-13">
-          <button class="btn btn-danger btn-sm" ng-click="" aria-label="Remove" style="float: right;">Delete Custom List</button>
+          <button class="btn btn-danger btn-sm" ng-click="deleteEntry(cust)" aria-label="Remove" style="float: right;">Delete Custom List</button>
           <uib-accordion-heading>
             <strong>Name:</strong> {{cust.name}}
           </uib-accordion-heading>
