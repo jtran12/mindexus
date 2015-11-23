@@ -41,10 +41,12 @@ Time: 10PM<br>
 Description:<br>
 In our final meeting before the deadline, we collaborated again to complete the search function, and to make enhancements to the user interface. The custom lists functionality is nearly complete. With the exception to the custom lists, we have ensured that our application is stable and good to go for our next demo with the TA.<br>
 <br>
-<b>Burndown Chart:</b> <br>
+<b>Burndown Chart</b> <br>
 We used the same method in Phase 2 in converting task sizes to story points where each member gives their opinion on what the task size should be. Large, Medium and Small tasks are 3, 2, 1 story points respectively. <br>
 https://docs.google.com/spreadsheets/d/1qWUD6rBcrgZarw2A65it4BdBE1JbJ8Zqus4u2n8aJiE/edit?usp=sharing <br>
 Issues Burned: #16, #19, #22, #28, #32 <br>
 Issues Remaining: #23, #25, #35, #36<br>
+
+<b>Decisions</b>
 
 Aside from the technical decisions we discussed earlier in regards to the tools used in building the application, it was important for us to set realistic goals in the given time frame. Time and commitment were a great part of the rationale behind our decision making as we wanted to build something interesting, but it had to have a balanced workload. Other reasons included sticking to the M.V.P., and having an intuitive and easy to use user interface. In terms of features and interaction, decisions were made by the entire group in conference calls that were held. When it came to decisions that dealt with implementation, in this case front-end and back-end, we split the group into two teams that would handle each end, then integrate each team's work during a conference call.
