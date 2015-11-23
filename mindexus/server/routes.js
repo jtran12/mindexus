@@ -10,6 +10,8 @@ var path = require('path');
 module.exports = function(app) {
 
   // Insert routes below
+  app.use('/api/customindices', require('./api/customindex'));
+  app.use('/customindices', require('./api/customindex'));
   app.use('/api/entries', require('./api/entry'));
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));

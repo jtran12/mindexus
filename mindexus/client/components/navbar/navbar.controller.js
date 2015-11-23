@@ -27,9 +27,13 @@ angular.module('mindexusApp')
 
     // Searches all the names of all the entries with substrings of search.value.
     $scope.search = function() {
+
       if (search.value.trim() !== "") {
 
-        // Gets all the entries in the db.
+
+        $location.path('/results/' + search.value);
+
+/*        // Gets all the entries in the db.
         $http.get('/api/entries').success(function(userEntries) {
 
           var userEntriesString = JSON.stringify(userEntries);
@@ -55,7 +59,7 @@ angular.module('mindexusApp')
 
 
           $scope.searchedEntries = result;
-        });
+        });*/
 
     } else {
       alert("Please rephrase your search parameter.");
