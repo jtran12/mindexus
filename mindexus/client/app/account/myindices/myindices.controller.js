@@ -95,6 +95,7 @@ angular.module('mindexusApp')
     $scope.addToCustom = function() {
 
      if($scope.newCustList === '') {
+
         return;
       }
       $scope.newKeywords = ($scope.newKeywordsString).split(" ");
@@ -137,6 +138,14 @@ angular.module('mindexusApp')
       $scope.selectedEntries.splice(ind,1);
     }
 
+    $scope.dataEntry = {
+      repeatSelect: null,
+      availableOptions: [
+        {id: '1', name: 'Option A'},
+        {id: '2', name: 'Option B'},
+        {id: '3', name: 'Option C'}
+      ],
+    };
 
 
   });
