@@ -10,9 +10,9 @@ We managed to complete sort functionality, custom list, custom queries to the se
 
 Review and Retrospective:
 
-	Our plan was to meet up on certain days and grind out a bunch of work at a time in order to fit our schedule. 
-	Our plan and process actually worked as we were able to communicate in long skype sessions which contributed to the significant process towards the end product. We felt that method was able to accomodate everyone's school schedule
+Our plan was to meet up on certain days and grind out a bunch of work at a time in order to fit our schedule. 
+Our plan and process actually worked as we were able to communicate in long skype sessions which contributed to the significant process towards the end product. We felt that method was able to accomodate everyone's school schedule
 
-	Unfortunately some goals were not met. Whether it be a problem of time management or lack of communication there was one outstanding issue that was to be completed in Phase 2 which was not completed (Issue #23) which involved filtering their own list by categories.
+Unfortunately some goals were not met. Whether it be a problem of time management or lack of communication there was one outstanding issue that was to be completed in Phase 2 which was not completed (Issue #23) which involved filtering their own list by categories.
 
-	In terms of improvement, we have decided that we should communicate often and delegate tasks responsibly. We also agreed that individually we all need to seek help if there may be any impediments that may be blocking progress. Lastly, we decided to also keep the UI in mind through all stages of the phase.
+In terms of improvement, we have decided that we should communicate often and delegate tasks responsibly. We also agreed that individually we all need to seek help if there may be any impediments that may be blocking progress. Lastly, we decided to also keep the UI in mind through all stages of the phase.
