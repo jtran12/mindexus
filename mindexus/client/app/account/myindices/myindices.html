@@ -76,8 +76,18 @@
               <strong>Keywords:</strong> {{entry.keywords}} <br>
               <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
               <strong>Personal Note:</strong> {{entry.note}}
-              <br><br>
-              <button class="btn btn-warning" ng-click="editEntry(entry)" aria-label="Edit">ADD TO CUSTOM LIST</button>
+              <br>
+              <br>
+
+              <!-- Should probably change value cust.name to cust.id to identify-->
+              <select name="repeatSelect" id="repeatSelect" ng-model="dataEntry.repeatSelect">
+                <option>Please select a custom list to add to</option>
+                <option ng-repeat="cust in customIndices" value="chosenCust">{{cust.name}}</option>
+              </select>
+
+              <br>
+              <br>
+              <button class="btn btn-warning" ng-click="addToCustom(chosenCust)" aria-label="Edit">ADD TO CUSTOM LIST</button>
           </uib-accordion-group>
         </uib-accordion>
 
