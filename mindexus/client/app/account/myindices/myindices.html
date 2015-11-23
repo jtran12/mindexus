@@ -5,14 +5,133 @@
     <h2>My Custom Indices</h2>
   </div>
 </header>
+<div uib-collapse="isCollapsedEdit">
+        <div class="well well-lg">
+        <h2>New Custom Index</h2>
+        <form class="form-horizontal" role="form" ng-submit="addToCustom()">
+          <div class="form-group">
+            <label class = "col-sm-2 control-label">Name/Title:</label>
+            <div class = "col-sm-10">
+              <input type="text" ng-model="newCustList" name ="newCustList" placeholder="Enter Custom Index Title" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class = "col-sm-2 control-label">Keywords (separate with space):</label>
+            <div class = "col-sm-10">
+              <input type="text" ng-model="newKeywordsString" name ="newKeywordsString" placeholder="Add Keywords" class="form-control">
+            </div>
+          </div>
 
-<button type="button" class="btn btn-warning btn-lg" ng-click="isCollapsed = !isCollapsed" style="float: center;">+New Custom List</button>
+          <div class="form-group">
+            <label class = "col-sm-2 control-label">Description</label>
+            <div class = "col-sm-10">
+              <input type="text" ng-model="newDescription" name ="newDescription" placeholder="Add Description" class="form-control">
+            </div>
+          </div>
+<!--           <div class="form-group"> 
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label><input type="checkbox" ng-model="active">Active</label>
+              </div>
+            </div>
+          </div>   -->  
+
+            <div class="container-fluid col-sm-5">
+            <br>
+              <h2>Choose the index entries:</h2>
+              <!-- ALL ENTRIES -->
+              <uib-accordion close-others="false"  ng-repeat="entry in allEntries">
+                <uib-accordion-group class = "col-sm-13">
+                  <uib-accordion-heading>
+                    <strong>Title:</strong> {{entry.name}}
+                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+
+                  </uib-accordion-heading>
+                    <strong>Date Added:</strong> {{entry.date}} <br>
+                    <strong>Category:</strong> {{entry.category}} <br>
+                    <strong>Keywords:</strong> {{entry.keywords}} <br>
+                    <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
+                    <strong>Personal Note:</strong> {{entry.note}}
+                    <br><br>
+                    <button class="btn btn-warning" ng-click="selectEntry(entry)" aria-label="Edit">ADD TO CUSTOM INDEX</button>
+                </uib-accordion-group>
+              </uib-accordion>
+            </div>
+            <div class="container-fluid col-sm-5">
+            <br>
+              <h2>Selected Entries:</h2>
+              <!-- ALL ENTRIES -->
+              <uib-accordion close-others="false"  ng-repeat="entry in selectedEntries">
+                <uib-accordion-group class = "col-sm-13">
+                  <uib-accordion-heading>
+                    <strong>Title:</strong> {{entry.name}}
+                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+
+                  </uib-accordion-heading>
+                    <strong>Date Added:</strong> {{entry.date}} <br>
+                    <strong>Category:</strong> {{entry.category}} <br>
+                    <strong>Keywords:</strong> {{entry.keywords}} <br>
+                    <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
+                    <strong>Personal Note:</strong> {{entry.note}}
+                    <br><br>
+                    <button class="btn btn-warning" ng-click="removeEntry(entry)" aria-label="Edit">REMOVE FROM CUSTOM INDEX</button>
+                </uib-accordion-group>
+              </uib-accordion>
+            </div>
+
+          <div class="form-group">
+            <div class = "col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-primary" ng-click="addToCustom()">Create New Index</button>
+              <button type="button" class="btn btn-danger" ng-click="isCollapsedEdit = !isCollapsedEdit">Cancel</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+</div>
+<div class="col-sm-18 container-fluid">
+<!--   <uib-tabset>
+    <uib-tab heading="My Custom Indices" active = "isCollapsed"> -->
+      <div class="col-sm-6 container-fluid">
+        <br>
+        <h1>Custom Indices</h1><hr>
+
+        <!-- CUSTOM INDICES -->
+        <uib-accordion close-others="false" ng-repeat="cust in customIndices">
+          <uib-accordion-group  class = "col-sm-13">
+            <button class="btn btn-danger btn-sm" ng-click="deleteEntry(cust)" aria-label="Remove" style="float: right;">Delete Custom List</button>
+            <uib-accordion-heading>
+              <strong>Name:</strong> {{cust.name}}
+            </uib-accordion-heading>
+              <strong>Keywords:</strong> {{cust.keywords}} <br>
+              <strong>Description:</strong> {{cust.description}} <br>
+              <strong>Entries:</strong> {{cust.entries}} <br>
+
+<!--               <strong>Active:</strong> {{cust.active}} <br> -->
+              <br><br>
+          </uib-accordion-group>
+        </uib-accordion>
+          <br>
+
+      </div>  
+      <br><h1> <br><br> 
+        <button type="button" class="btn btn-warning btn-lg" ng-click="isCollapsedEdit = !isCollapsedEdit" style="float: center;">+New Custom index</button></h1><br>
+<!--     </uib-tab>
+        <uib-tab heading="+ New Custom Index" active = "isCollapsedEdit">  
+
+    </uib-tab> -->
+<!-- 
+  </uib-tabset> -->
+
+</div>
+
+
 
 <!-- ADD TO CUSTOM LIST FIELDS -->
-<div class="container-fluid col-sm-5">
-  <br>
+<!-- <div class="container-fluid col-sm-5">
+  <br> -->
     <!--  CUSTOM LIST INPUT -->  
-    <div uib-collapse="isCollapsed">
+ <!--    <div uib-collapse="false">
       <div class="well well-lg">
         <h2>Add Custom List</h2>
         <form class="form-horizontal" role="form" ng-submit="addToCustom()">
@@ -54,61 +173,13 @@
     </div>
 
 
+ -->
+
+
+<!-- <div class="container-fluid">
+  <div class="row"> -->
 
 
 
-<div class="container-fluid">
-  <div class="row">
-
-    <div class="container-fluid col-sm-6">
-      <br>
-        <h1>All Entries</h1><hr>
-
-        <!-- ALL ENTRIES -->
-        <uib-accordion close-others="false" ng-repeat="entry in allEntries">
-          <uib-accordion-group  class = "col-sm-13">
-            <uib-accordion-heading>
-              <strong>Title:</strong> {{entry.name}}
-              <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-            </uib-accordion-heading>
-              <strong>Date Added:</strong> {{entry.date}} <br>
-              <strong>Category:</strong> {{entry.category}} <br>
-              <strong>Keywords:</strong> {{entry.keywords}} <br>
-              <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
-              <strong>Personal Note:</strong> {{entry.note}}
-              <br><br>
-              <button class="btn btn-warning" ng-click="editEntry(entry)" aria-label="Edit">ADD TO CUSTOM LIST</button>
-          </uib-accordion-group>
-        </uib-accordion>
 
 
-    </div>
-
-
-
-    <div class="col-sm-6 container-fluid">
-      <br>
-      <h1>Custom Indices</h1><hr>
-
-      <!-- CUSTOM INDICES -->
-      <uib-accordion close-others="false" ng-repeat="cust in customIndices">
-        <uib-accordion-group  class = "col-sm-13">
-          <button class="btn btn-danger btn-sm" ng-click="deleteEntry(cust)" aria-label="Remove" style="float: right;">Delete Custom List</button>
-          <uib-accordion-heading>
-            <strong>Name:</strong> {{cust.name}}
-          </uib-accordion-heading>
-            <strong>Keywords:</strong> {{cust.keywords}} <br>
-            <strong>Description:</strong> {{cust.description}} <br>
-            <strong>Active:</strong> {{cust.active}} <br>
-            <br><br>
-        </uib-accordion-group>
-      </uib-accordion>
-
-
-
-    <div>
-
-
-  </div>
-
-</div>

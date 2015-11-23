@@ -2,8 +2,11 @@
 
 angular.module('mindexusApp')
   .controller('MyindicesCtrl', function ($scope, Auth, $http) {
+
+
     $scope.isCollapsed = true;
     $scope.isCollapsedEdit = true;
+    $scope.isCollapsedAdd = false;
     $scope.getCurrentUser = Auth.getCurrentUser;
 
     $scope.go = function(path){
@@ -11,6 +14,7 @@ angular.module('mindexusApp')
     }
 
     $scope.allEntries = [];
+    $scope.selectedEntries = [];
     $scope.customIndices = [];
 
 
@@ -18,6 +22,7 @@ angular.module('mindexusApp')
     $scope.newKeywordsString = "";
     $scope.newKeywords = [];
     $scope.newDescription = '';
+    $scope.newEntries = [];
     $scope.newRating = 0;
     $scope.active = false;
     $scope.ratingStates = [{stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty'}];
@@ -52,7 +57,6 @@ angular.module('mindexusApp')
           result.push(userListMap[i]);
         }
       }
-
       $scope.customIndices = result;
     });
 
@@ -78,50 +82,59 @@ angular.module('mindexusApp')
         var userListsString = JSON.stringify(userLists);
         var userListsMap = JSON.parse(userListsString);
         var result = [];
-
         for (var i = 0; i < userListsMap.length; i++) {
           if (userListsMap[i].email == Auth.getCurrentUser().email) {
             result.push(userListsMap[i]);
           }
         }
-
         $scope.customIndices = result;
       });
-
-      $scope.isCollapsed = true;
+      $scope.isCollapsedEdit = true;
     }
 
     $scope.addToCustom = function() {
-      if($scope.newCustList === '') {
+
+     if($scope.newCustList === '') {
         return;
       }
       $scope.newKeywords = ($scope.newKeywordsString).split(" ");
-
-
+      for (var i = 0; i< $scope.selectedEntries.length;i++){
+        $scope.newEntries.push($scope.selectedEntries[i]._id);
+      }
       $http.post('/api/customindices', {
         name: ($scope.newCustList).capitalize(true),
         keywords: $scope.newKeywords,
         public_rating: $scope.newRating,
         active: $scope.active,
+        entries: $scope.newEntries,
         description: $scope.newDescription,
         email: Auth.getCurrentUser().email
       });
-
-
       $scope.newCustList = '';
       $scope.newKeywordsString = "";
       $scope.newKeywords = [];
       $scope.newDescription = '';
       $scope.newRating = 0;
+      $scope.selectedEntries = [];
+      $scope.newEntries = [];
       $scope.active = false;
       $scope.refreshList();
 
     };
 
     $scope.deleteEntry = function(entry) {
-      alert(entry);
       $http.delete('/api/customindices/' + entry._id);
       $scope.refreshList();
+    }
+    $scope.selectEntry = function(entry) {
+      $scope.selectedEntries.push(entry);
+      var ind = $scope.allEntries.indexOf(entry);
+      $scope.allEntries.splice(ind,1);
+    }
+    $scope.removeEntry = function(entry) {
+      $scope.allEntries.push(entry);
+      var ind = $scope.selectedEntries.indexOf(entry);
+      $scope.selectedEntries.splice(ind,1);
     }
 
 
