@@ -2,9 +2,9 @@
 
 <header class="page-head" id="banner">
   <div class="container">
-    <h2>search results:</h2>
+    <h2>Search Results</h2>
   </div>
-</header>
+</header><br>
 <div class="container-fluid col-sm-5">
 	<div class="row">
 		<uib-accordion close-others="false" ng-repeat="entry in entryresults">
@@ -13,16 +13,17 @@
 		      <strong>Title:</strong> {{entry.name}}
 		      <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
 		    </uib-accordion-heading>
+		      <strong>Added by: </strong> {{entry.email}} <br>
 		      <strong>Date Added:</strong> {{entry.date}} <br>
 		      <strong>Category:</strong> {{entry.category}} <br>
 		      <strong>Keywords:</strong> {{entry.keywords}} <br>
 		      <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
 		      <strong>Seen It:</strong> {{entry.seenIt}} <br>
 		      <strong>Personal Note:</strong> {{entry.note}}
-		      <br>
-		      <button class="btn btn-warning" ng-click="editEntry(entry)" aria-label="Edit">ADD TO CUSTOM LIST</button> <br>
-		      <button class="btn btn-warning" ng-click="addEntryWTS(entry)" aria-label="Edit">ADD TO "WANT TO SEE"</button><br>
-		      <button class="btn btn-warning" ng-click="addEntrySI(entry)" aria-label="Edit">ADD TO "SEEN IT"</button><br>
+		      <br><br>
+		      <button class="btn btn-warning" ng-click="editEntry(entry)" aria-label="Edit">ADD TO CUSTOM LIST</button> <br><br>
+		      <button class="btn btn-warning" ng-click="addEntryWTS(entry)" aria-label="Edit">ADD TO "WANT TO SEE"</button><br><br>
+		      <button class="btn btn-warning" ng-click="addEntrySI(entry)" aria-label="Edit">ADD TO "SEEN IT"</button><br><br>
 		      <br>
 		  </uib-accordion-group>
 		</uib-accordion>

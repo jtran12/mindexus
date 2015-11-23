@@ -119,7 +119,6 @@ angular.module('mindexusApp')
     };
 
     $scope.deleteEntry = function(entry) {
-      alert(entry);
       $http.delete('/api/customindices/' + entry._id);
       $scope.refreshList();
     }
