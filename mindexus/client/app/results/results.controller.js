@@ -27,7 +27,8 @@ angular.module('mindexusApp')
             var searchLowerCase = ($stateParams.query).toLowerCase();
 
             // Check if entry matches search parameter, checking name at the moment.
-            if (entryNameLower.indexOf(searchLowerCase) > -1) {
+            if (entryNameLower.indexOf(searchLowerCase) > -1 
+              || userEntriesMap[i].keywords.indexOf(searchLowerCase) > -1) {
 
               // Add matched entry to results.
               result.push(userEntriesMap[i]);

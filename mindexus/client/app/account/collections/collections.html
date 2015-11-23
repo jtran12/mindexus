@@ -2,7 +2,7 @@
 
 <header class="page-head" id="banner">
   <div class="container">
-    <h2>Welcome to your collection, {{ getCurrentUser().name }}!</h2>
+    <h2>{{ getCurrentUser().name }}'s Collection</h2>
   </div>
 </header>
 
@@ -12,7 +12,7 @@
       <strong><p>Sort By:</p></strong>
       <select name="sort" id="sort" class="form-control">
         <option value="lowToHigh" selected>Ratings Low to High</option>
-        <option value="highToLow">Ratings High to High</option>
+        <option value="highToLow">Ratings High to Low</option>
         <option value="title">Title</option>
         <option value="dateNewToOld">Date (New to Old and Old to New)</option>
       </select>
@@ -52,9 +52,10 @@
         </uib-accordion-group>
       </uib-accordion>
       <br>
-      <button type="button" class="btn btn-primary btn-lg" ng-click="sortEntries()" style="float: center">Sort</button>
-      <button type="button" class="btn btn-danger btn-lg" ng-click="refreshEntries()" style="float: center">Reset</button>
+      <button type="button" class="btn btn-success btn-lg" ng-click="sortEntries()" style="float: center">Sort</button>
       <button type="button" class="btn btn-warning btn-lg" ng-click="isCollapsed = !isCollapsed" style="float: center;">+New Entry</button>
+      <button type="button" class="btn btn-danger btn-lg" ng-click="refreshEntries()" style="float: center">Reset</button>
+
 
     </div>
 
