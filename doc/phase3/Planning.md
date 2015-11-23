@@ -1,7 +1,7 @@
 Planning
 
 Our team goals were to complete outstanding work from Phase 2 and make significant progress towards the finished product while keeping the envision of our finished product as well. 
-Moreover, our plan involved adding more user customizability by allowing users to sort their media entries, adding custom lists which allows users to add media entries to custom lists for sharing amongst other users.The initial plan included user customizability and accessibility by implementing sort functionality, custom list, custom queries to the server, searching for other user's custom lists and other issues. 
+Moreover, our plan involved adding more user customizability by allowing users to sort their media entries, adding custom lists which allows users to add media entries to custom lists for sharing amongst other users. The initial plan included user customizability and accessibility by implementing sort functionality, the creation and management of custom lists, sending custom queries to the server, searching for other users' custom lists in this order. 
 Initially we intended touch up the UI while adding functionality but we ended up finishing functionality before correcting the UI or keeping the UI in mind.
 
 On some occassions we ran into time constraints which involved re-planning on what needed to be done first and foremost. 
