@@ -91,7 +91,7 @@ angular.module('mindexusApp')
       $scope.isCollapsed = true;
     }
 
-    $scope.addToCustom = function() {
+    $scope.addToCustom = function(chosenCust) {
       if($scope.newCustList === '') {
         return;
       }
@@ -124,6 +124,14 @@ angular.module('mindexusApp')
       $scope.refreshList();
     }
 
+    $scope.dataEntry = {
+      repeatSelect: null,
+      availableOptions: [
+        {id: '1', name: 'Option A'},
+        {id: '2', name: 'Option B'},
+        {id: '3', name: 'Option C'}
+      ],
+    };
 
 
   });
