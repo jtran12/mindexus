@@ -19,7 +19,11 @@
 		      <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
 		      <strong>Seen It:</strong> {{entry.seenIt}} <br>
 		      <strong>Personal Note:</strong> {{entry.note}}
-		      <br><br>
+		      <br>
+		      <button class="btn btn-warning" ng-click="editEntry(entry)" aria-label="Edit">ADD TO CUSTOM LIST</button> <br>
+		      <button class="btn btn-warning" ng-click="addEntryWTS(entry)" aria-label="Edit">ADD TO "WANT TO SEE"</button><br>
+		      <button class="btn btn-warning" ng-click="addEntrySI(entry)" aria-label="Edit">ADD TO "SEEN IT"</button><br>
+		      <br>
 		  </uib-accordion-group>
 		</uib-accordion>
 	</div>
