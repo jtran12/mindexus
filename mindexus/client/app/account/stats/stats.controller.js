@@ -70,8 +70,8 @@ angular.module('mindexusApp')
 	  $scope.items[2].num = $scope.numBook;
 	  $scope.items[3].num = $scope.numVideoG
 
-	  $scope.items2[0].num = $scope.numSeen;
-	  $scope.items2[1].num = $scope.numWantToSee;
+	  $scope.items2[0].num = $scope.numWantToSee;
+	  $scope.items2[1].num = $scope.numSeen;
 
     });
 
