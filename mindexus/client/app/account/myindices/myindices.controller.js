@@ -164,8 +164,6 @@ angular.module('mindexusApp')
       var ind = custEntryinIndex.entries.indexOf(entry);
       custEntryinIndex.entries.splice(ind, 1);
 
-      alert(custEntry._id);
-
 
       $http.put('/api/customindices/custom/' + custEntry._id, {
         entries: custEntryinIndex.entries
