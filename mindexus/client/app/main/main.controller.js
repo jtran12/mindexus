@@ -5,10 +5,6 @@ angular.module('mindexusApp')
     $scope.user = {};
     $scope.errors = {};
 
-    if (Auth.getCurrentUser) {
-      $location.path('/collections');
-    }
-
     $scope.login = function(form) {
       $scope.submitted = true;
 
