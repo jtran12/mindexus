@@ -1,0 +1,42 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container-fluid">
+	<h2>{{ getCurrentUser().name }}'s Stats</h2>
+
+	<table class="table table-striped table-bordered" style="width: 50%">
+		<thead>
+			<tr>
+				<th>Category</th>
+				<th>Number of Entries</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="x in items"> <!-- | orderBy : 'num' -->
+ 				<td> {{ x.category }}</td>
+				<td> {{ x.num }} </td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table class="table table-striped table-bordered" style="width: 50%">
+		<thead>
+			<tr>
+				<th>Want to See / Have Seen</th>
+				<th>Number of Entries</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="y in items2">
+				<td> {{ y.category }} </td>
+				<td> {{ y.num  }} </td>
+			</tr>
+		</tbody>
+	</table>
+
+
+</div>
+
+
+
