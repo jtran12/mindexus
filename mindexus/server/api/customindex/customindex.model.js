@@ -8,7 +8,7 @@ var CustomindexSchema = new Schema({
   keywords: [String],
   public_rating: {type: Number, min: 0, max: 5, default: 0},
   description: String,
-  entries: [String],
+  entries: [Schema.Types.Mixed],
   active: {type:Boolean, default:false},
   email: String
 });

@@ -17,8 +17,6 @@ angular.module('mindexusApp')
     $scope.selectedEntries = [];
     $scope.customIndices = [];
 
-    //$scope.cusEntries = [];
-
 
     $scope.newCustList = '';
     $scope.newKeywordsString = "";
@@ -48,6 +46,23 @@ angular.module('mindexusApp')
       $scope.allEntries = result;
 
     });
+
+    $scope.getEntries = function() {
+      $http.get('/api/entries').success(function(userEntries) {
+      var userEntriesString = JSON.stringify(userEntries);
+      var userEntriesMap = JSON.parse(userEntriesString);
+      var result = [];
+
+      for(var i = 0; i < userEntriesMap.length; i++){
+        if(userEntriesMap[i].email == Auth.getCurrentUser().email) {
+          result.push(userEntriesMap[i]);
+        }
+      }
+
+      $scope.allEntries = result;
+
+      });
+    }
 
     $http.get('/api/customindices').success(function(data) {
       var userListString = JSON.stringify(data);
@@ -102,8 +117,7 @@ angular.module('mindexusApp')
       }
       $scope.newKeywords = ($scope.newKeywordsString).split(" ");
       for (var i = 0; i< $scope.selectedEntries.length;i++){
-        $scope.newEntries.push($scope.selectedEntries[i].name);
-        //$scope.cusEntries.push($scope.selectedEntries[i].name);
+        $scope.newEntries.push($scope.selectedEntries[i]);
       }
       $http.post('/api/customindices', {
         name: ($scope.newCustList).capitalize(true),
@@ -113,7 +127,6 @@ angular.module('mindexusApp')
         entries: $scope.newEntries,
         description: $scope.newDescription,
         email: Auth.getCurrentUser().email
-        //cusEntries: $scope.cusEntries
       });
       $scope.newCustList = '';
       $scope.newKeywordsString = "";
@@ -123,7 +136,8 @@ angular.module('mindexusApp')
       $scope.selectedEntries = [];
       $scope.newEntries = [];
       $scope.active = false;
-      //$scope.cusEntries = [];
+      $scope.allEntries = $scope.getEntries();
+
       $scope.refreshList();
 
     };
@@ -138,9 +152,8 @@ angular.module('mindexusApp')
       $scope.allEntries.splice(ind,1);
     }
     $scope.removeEntry = function(entry) {
-      $scope.allEntries.push(entry);
-      var ind = $scope.selectedEntries.indexOf(entry);
-      $scope.selectedEntries.splice(ind,1);
+
+      alert("Implement me");
     }
 
   });
