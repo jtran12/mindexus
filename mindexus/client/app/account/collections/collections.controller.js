@@ -46,6 +46,66 @@ angular.module('mindexusApp')
       $scope.toSee = resultToSee;
     });
 
+    $scope.keywordIn = "";
+    $scope.filter = function() {
+
+      var filterToSee = [];
+      var filterSeen = [];
+
+      if (filterCategory.value != "" && $scope.keywordIn.trim() != "") {
+        // category & keyword
+        for (var i = 0; i < $scope.toSee.length; i++) {
+          if ($scope.toSee[i].category == filterCategory.value && $scope.toSee[i].keywords.indexOf($scope.keywordIn.toLowerCase()) > -1) {
+            filterToSee.push($scope.toSee[i]);
+          }
+        }
+
+        for (var i = 0; i < $scope.seenIt.length; i++) {
+          if ($scope.seenIt[i].category == filterCategory.value && $scope.seenIt[i].keywords.indexOf($scope.keywordIn.toLowerCase()) > -1) {
+            filterSeen.push($scope.seenIt[i]);
+          }
+        }
+      
+
+      } else if (filterCategory.value != "") {
+
+        // By Category: to see
+        for (var i = 0; i < $scope.toSee.length; i++) {
+          if ($scope.toSee[i].category == filterCategory.value) {
+            filterToSee.push($scope.toSee[i]);
+          }
+        }
+
+        // By Category: seen
+        for (var i = 0; i < $scope.seenIt.length; i++) {
+          if ($scope.seenIt[i].category == filterCategory.value) {
+            filterSeen.push($scope.seenIt[i]);
+          }
+        }
+
+      } else {
+        // by keyword
+        for (var i = 0; i < $scope.toSee.length; i++) {
+          if ($scope.toSee[i].keywords.indexOf($scope.keywordIn.toLowerCase()) > -1) {
+            filterToSee.push($scope.toSee[i]);
+          }
+        }
+
+        for (var i = 0; i < $scope.seenIt.length; i++) {
+          if ($scope.seenIt[i].keywords.indexOf($scope.keywordIn.toLowerCase()) > -1) {
+            filterSeen.push($scope.seenIt[i]);
+          }
+        }
+      }
+
+      if (filterCategory.value != "" || $scope.keywordIn.trim() != "") {
+        $scope.toSee = filterToSee;
+        $scope.seenIt = filterSeen;
+      }
+
+    }
+
+
     $scope.refreshEntries=function(){
       $http.get('/api/entries').success(function(userEntries) {
         var userEntriesString = JSON.stringify(userEntries);
@@ -63,6 +123,10 @@ angular.module('mindexusApp')
 
         $scope.seenIt = resultSeen;
         $scope.toSee = resultToSee;
+
+        // Reset filtering
+        $scope.keywordIn = "";
+        filterCategory.value = "";
       });
       $scope.isCollapsed = true;
     };
@@ -71,7 +135,7 @@ angular.module('mindexusApp')
       if($scope.newEntry === '') {
         return;
       }
-      $scope.newKeywords = ($scope.newKeywordsString).split(" ");
+      $scope.newKeywords = ($scope.newKeywordsString).toLowerCase().split(" ");
 
 
       $http.post('/api/entries', { 

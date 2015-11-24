@@ -9,7 +9,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="hero-unit col-sm-2 container-fluid" style="height: 100%">
-      <strong><p>Sort By:</p></strong>
+      <h3><p>Sort By:</p></h3>
       <select name="sort" id="sort" class="form-control">
         <option value="lowToHigh" selected>Ratings Low to High</option>
         <option value="highToLow">Ratings High to Low</option>
@@ -17,17 +17,31 @@
         <option value="dateNewToOld">Date</option>
       </select>
       <br>
-      <strong><p>Filters:</p></strong>
-      <select name="filters" ng-model="filterCategory" class="form-control">
-        <option value="" disabled selected>+ Choose One</option>
-        <option value="keyword">Keyword</option>
-        <option value="category">Category</option>
+      <button type="button" class="btn btn-success btn-md" ng-click="sortEntries()" style="width: 90%">Sort</button>
+      <br>
+      <br>
+      <h3><p>Filters:</p></h3>
+      <label class="form-control">By Category</label>
+
+      <select name="filterCategory" id="filterCategory" class="form-control">
+        <option value="">+ Choose One</option>
+        <option value="TV Show">TV Show</option>
+        <option value="Movie">Movie</option>
+        <option value="Book">Book</option>
+        <option value="Video Game">Video Game</option>
       </select>
+
+      <br>
+      <label class="form-control">By Keyword</label>
+      <input type="text" name="keywordIn" id="keywordIn" ng-model="keywordIn" class="form-control" placeholder="Enter Filtering Keyword">
+
+      <br>
+      <button type="button" class="btn btn-success btn-md" ng-click="filter()" style="width: 90%">Filter</button>
       <br>
       <br>
-      <button type="button" class="btn btn-success btn-lg" ng-click="sortEntries()" style="float: center">Sort</button>
-      <button type="button" class="btn btn-warning btn-lg" ng-click="isCollapsed = !isCollapsed" style="float: center;">+New Entry</button>
-      <button type="button" class="btn btn-danger btn-lg" ng-click="refreshEntries()" style="float: center">Reset</button>
+      <br><br>
+      <button type="button" class="btn btn-warning btn-lg" ng-click="isCollapsed = !isCollapsed">+New Entry</button>
+      <button type="button" class="btn btn-danger btn-lg" ng-click="refreshEntries()">Reset</button>
 
 
     </div>
@@ -218,7 +232,7 @@
             <strong>Personal Note:</strong> {{entry.note}}
             <br><br>
             <button class="btn btn-warning" ng-click="editEntry(entry)" aria-label="Edit">Edit Entry</button>
-            <button class="btn btn-info" ng-click="hasentSeen(entry)" aria-label="Seen">haven't seen it</button>
+            <button class="btn btn-info" ng-click="hasentSeen(entry)" aria-label="Seen">Haven't Seen It</button>
         </uib-accordion-group>
       </uib-accordion>
 

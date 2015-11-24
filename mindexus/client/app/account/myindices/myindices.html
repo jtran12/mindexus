@@ -106,7 +106,24 @@
             </uib-accordion-heading>
               <strong>Keywords:</strong> {{cust.keywords}} <br>
               <strong>Description:</strong> {{cust.description}} <br>
-              <strong>Entries:</strong> {{cust.entries}} <br>
+              <!-- <strong>Entries:</strong> {{cust.entries}} <br>-->
+              <strong>Entries:</strong><br><br>
+
+                <!--<uib-accordion close-others="false" ng-repeat="entry in cusEntries">-->
+                <uib-accordion close-others="false" ng-repeat="entry in cust.entries">
+                  <uib-accordion-group  class = "col-sm-13">
+                    <button class="btn btn-danger" ng-click="removeEntry(entry)" style= "float: right;" aria-label="Edit">Remove this entry from this list</button>
+                    <uib-accordion-heading>
+                      <strong>Name:</strong> {{entry}}
+                    </uib-accordion-heading>
+                      <strong>Date Added:</strong> {{entry.date}} <br>
+                      <strong>Category:</strong> {{entry.category}} <br>
+                      <strong>Keywords:</strong> {{entry.keywords}} <br>
+                      <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
+                      <strong>Personal Note:</strong> {{entry.note}}
+                      <br><br>
+                  </uib-accordion-group>
+                </uib-accordion>
 
 <!--               <strong>Active:</strong> {{cust.active}} <br> -->
               <br><br>
