@@ -152,8 +152,9 @@ angular.module('mindexusApp')
       $scope.allEntries.splice(ind,1);
     }
     $scope.removeEntry = function(entry) {
-
-      alert("Implement me");
+      $scope.allEntries.push(entry);
+      var ind = $scope.selectedEntries.indexOf(entry);
+      $scope.selectedEntries.splice(ind, 1);
     }
 
   });
