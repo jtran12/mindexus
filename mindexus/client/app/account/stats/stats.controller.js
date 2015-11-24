@@ -11,6 +11,7 @@ angular.module('mindexusApp')
   	$scope.numMovie = 0;
   	$scope.numVideoG = 0;
   	$scope.numBook = 0;
+    $scope.numOther = 0;
   	$scope.results = [];
 
   	$scope.items = [{
@@ -25,7 +26,10 @@ angular.module('mindexusApp')
   	}, {
   		category: "Video Game",
   		num: 0
-  	}];
+  	}, {
+      category: "Other",
+      num: 0
+    }];
 
   	$scope.items2 = [{
   		category: "Want to See",
@@ -54,21 +58,24 @@ angular.module('mindexusApp')
 
       for (var i = 0; i < $scope.results.length; i++) {
 	    	
-    	if ($scope.results[i].category == "TV Show") {
-    		$scope.numTV++;
-    	} else if ($scope.results[i].category == "Movie") {
-    		$scope.numMovie++;
-    	} else if ($scope.results[i].category == "Book") {
-    		$scope.numBook++;
-    	} else if ($scope.results[i].category == "Video Game") {
-    		$scope.numVideoG++;
-    	}
-	  }
+      	if ($scope.results[i].category == "TV Show") {
+      		$scope.numTV++;
+      	} else if ($scope.results[i].category == "Movie") {
+      		$scope.numMovie++;
+      	} else if ($scope.results[i].category == "Book") {
+      		$scope.numBook++;
+      	} else if ($scope.results[i].category == "Video Game") {
+      		$scope.numVideoG++;
+      	} else {
+          $scope.numOther++;
+        }
+	    } 
 
 	  $scope.items[0].num = $scope.numTV;
 	  $scope.items[1].num = $scope.numMovie;
 	  $scope.items[2].num = $scope.numBook;
-	  $scope.items[3].num = $scope.numVideoG
+	  $scope.items[3].num = $scope.numVideoG;
+    $scope.items[4].num = $scope.numOther;
 
 	  $scope.items2[0].num = $scope.numWantToSee;
 	  $scope.items2[1].num = $scope.numSeen;
