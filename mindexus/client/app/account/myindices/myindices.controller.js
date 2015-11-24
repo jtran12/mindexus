@@ -17,6 +17,8 @@ angular.module('mindexusApp')
     $scope.selectedEntries = [];
     $scope.customIndices = [];
 
+    $scope.custEntry = [];
+
 
     $scope.newCustList = '';
     $scope.newKeywordsString = "";
@@ -118,6 +120,7 @@ angular.module('mindexusApp')
       $scope.newKeywords = ($scope.newKeywordsString).split(" ");
       for (var i = 0; i< $scope.selectedEntries.length;i++){
         $scope.newEntries.push($scope.selectedEntries[i]);
+        //$scope.custEntry.push($scope.selectedEntries[i]);
       }
       $http.post('/api/customindices', {
         name: ($scope.newCustList).capitalize(true),
@@ -155,6 +158,22 @@ angular.module('mindexusApp')
       $scope.allEntries.push(entry);
       var ind = $scope.selectedEntries.indexOf(entry);
       $scope.selectedEntries.splice(ind, 1);
+    }
+    $scope.delEntryCustList = function(entry, custEntry){
+
+      // for entry in cust
+      $scope.allEntries.push(entry);
+      var custEntryinIndex = $scope.customIndices[$scope.customIndices.indexOf(custEntry)];
+      var ind = custEntryinIndex.entries.indexOf(entry);
+      custEntryinIndex.entries.splice(ind, 1);
+
+      alert(custEntry._id);
+
+
+      $http.put('/api/customindices/custom/' + custEntry._id, {
+        entries: custEntryinIndex.entries
+      });
+      $scope.refreshList();
     }
 
   });

@@ -42,6 +42,16 @@ exports.update = function(req, res) {
   });
 };
 
+exports.customUpdate = function(req, res){
+  if(req.body._id) { delete req.body._id; }
+  Customindex.findOneAndUpdate({_id: req.params.id}, req.body, {upsert: true}, function (err, customindex) {
+    if (err) { return handleError(res, err); }
+    if(!customindex) { return res.status(404).send('Not Found'); }
+    return res.status(200).json(customindex);
+  });
+
+}
+
 // Deletes a customindex from the DB.
 exports.destroy = function(req, res) {
   Customindex.findById(req.params.id, function (err, customindex) {

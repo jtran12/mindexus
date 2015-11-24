@@ -68,7 +68,7 @@
                     <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
                     <strong>Personal Note:</strong> {{entry.note}}
                     <br><br>
-                    <button class="btn btn-warning" ng-click="removeEntry(entry)" aria-label="Edit">REMOVE FROM CUSTOM INDEX</button>
+                    <button class="btn btn-danger" ng-click="removeEntry(entry)" aria-label="Edit">REMOVE FROM CUSTOM INDEX</button>
                 </uib-accordion-group>
               </uib-accordion>
             </div>
@@ -103,7 +103,7 @@
 
                 <uib-accordion close-others="false" ng-repeat="entry in cust.entries">
                   <uib-accordion-group  class = "col-sm-13">
-                    <button class="btn btn-danger" ng-click="removeEntry(entry)" style= "float: right;" aria-label="Edit">Remove Entry</button>
+                    <button class="btn btn-danger" ng-click="delEntryCustList(entry, cust)" style= "float: right;" aria-label="Edit">Remove Entry</button>
                     <uib-accordion-heading>
                       <strong>Name:</strong> {{entry.name}}
                     </uib-accordion-heading>
