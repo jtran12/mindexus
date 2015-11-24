@@ -14,7 +14,7 @@
         <option value="lowToHigh" selected>Ratings Low to High</option>
         <option value="highToLow">Ratings High to Low</option>
         <option value="title">Title</option>
-        <option value="dateNewToOld">Date (New to Old and Old to New)</option>
+        <option value="dateNewToOld">Date</option>
       </select>
       <br>
       <strong><p>Filters:</p></strong>
@@ -24,33 +24,6 @@
         <option value="category">Category</option>
       </select>
       <br>
-      <!--TODO: Link all the By Category and Keyword to do the stuff intended-->
-      <uib-accordion close-others="false" ng-model="filterCategory">
-          <uib-accordion-group  class = "col-sm-13">
-            <uib-accordion-heading>
-              Browse Entries:
-              <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-th': !status.open}"></i>
-
-            </uib-accordion-heading>
-              <ul>
-                <li><font color="black">By Category</font></li>
-                <li><font color="black">By Keyword</font></li>
-              </ul>
-          </uib-accordion-group>
-      </uib-accordion>
-      <uib-accordion close-others="false" ng-model="filterCategory">
-        <uib-accordion-group  class = "col-sm-13">
-          <uib-accordion-heading>
-            <strong>Browse Indexes:</strong>
-            <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-list-alt': !status.open}"></i>
-
-          </uib-accordion-heading>
-            <ul>
-              <li><font color="black">By Category</font></li>
-              <li><font color="black">By Keyword</font></li>
-            </ul>
-        </uib-accordion-group>
-      </uib-accordion>
       <br>
       <button type="button" class="btn btn-success btn-lg" ng-click="sortEntries()" style="float: center">Sort</button>
       <button type="button" class="btn btn-warning btn-lg" ng-click="isCollapsed = !isCollapsed" style="float: center;">+New Entry</button>
