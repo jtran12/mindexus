@@ -17,8 +17,6 @@ angular.module('mindexusApp')
     $scope.selectedEntries = [];
     $scope.customIndices = [];
 
-    $scope.custEntry = [];
-
 
     $scope.newCustList = '';
     $scope.newKeywordsString = "";
@@ -120,7 +118,6 @@ angular.module('mindexusApp')
       $scope.newKeywords = ($scope.newKeywordsString).split(" ");
       for (var i = 0; i< $scope.selectedEntries.length;i++){
         $scope.newEntries.push($scope.selectedEntries[i]);
-        //$scope.custEntry.push($scope.selectedEntries[i]);
       }
       $http.post('/api/customindices', {
         name: ($scope.newCustList).capitalize(true),
