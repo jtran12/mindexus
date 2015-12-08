@@ -27,7 +27,7 @@ angular.module('mindexusApp')
      return (lower ? this.toLowerCase() : this).replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
     };
     
-    // Gets all the entries for the current client.
+    //Gets all the entries for the current client.
     $http.get('/api/entries').success(function(userEntries) {
       var userEntriesString = JSON.stringify(userEntries);
       var userEntriesMap = JSON.parse(userEntriesString);
@@ -44,7 +44,9 @@ angular.module('mindexusApp')
 
       $scope.seenIt = resultSeen;
       $scope.toSee = resultToSee;
+      $scope.refreshEntries();
     });
+
 
     $scope.keywordIn = "";
     $scope.filter = function() {
@@ -120,6 +122,33 @@ angular.module('mindexusApp')
             resultToSee.push(userEntriesMap[i]);
           }
         }
+
+        // Change date, keywords, etc... so it's more readable.
+        for (var i = 0; i < resultSeen.length; i++) {
+          // Date
+          resultSeen[i].date = new Date(resultSeen[i].date).toUTCString();
+
+          // keywords
+          var keys = '';
+          for (var x = 0; x < resultSeen[i].keywords.length; x++) {
+            keys += resultSeen[i].keywords[x] + " ";
+          }
+          keys = keys.trim();
+          resultSeen[i].keywords = keys;
+        }
+        for (var i = 0; i < resultToSee.length; i++) {
+          // Date 
+          resultToSee[i].date = new Date(resultToSee[i].date).toUTCString();
+
+          // Keywords
+          // var keys = '';
+          // for (var x = 0; x < resultToSee[i].keywords.length; x++) {
+          //   keys += resultToSee[i].keywords[x] + " ";
+          // }
+          // keys = keys.trim();
+          // resultToSee[i].keywords = keys;
+        }
+
 
         $scope.seenIt = resultSeen;
         $scope.toSee = resultToSee;
