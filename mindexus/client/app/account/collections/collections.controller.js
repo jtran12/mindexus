@@ -141,12 +141,12 @@ angular.module('mindexusApp')
           resultToSee[i].date = new Date(resultToSee[i].date).toUTCString();
 
           // Keywords
-          // var keys = '';
-          // for (var x = 0; x < resultToSee[i].keywords.length; x++) {
-          //   keys += resultToSee[i].keywords[x] + " ";
-          // }
-          // keys = keys.trim();
-          // resultToSee[i].keywords = keys;
+          var keys = '';
+          for (var x = 0; x < resultToSee[i].keywords.length; x++) {
+            keys += resultToSee[i].keywords[x] + " ";
+          }
+          keys = keys.trim();
+          resultToSee[i].keywords = keys;
         }
 
 
