@@ -129,24 +129,24 @@ angular.module('mindexusApp')
           resultSeen[i].date = new Date(resultSeen[i].date).toUTCString();
 
           // keywords
-          var keys = '';
-          for (var x = 0; x < resultSeen[i].keywords.length; x++) {
-            keys += resultSeen[i].keywords[x] + " ";
-          }
-          keys = keys.trim();
-          resultSeen[i].keywords = keys;
+          // var keys = '';
+          // for (var x = 0; x < resultSeen[i].keywords.length; x++) {
+          //   keys += resultSeen[i].keywords[x] + " ";
+          // }
+          // keys = keys.trim();
+          // resultSeen[i].keywords = keys;
         }
         for (var i = 0; i < resultToSee.length; i++) {
           // Date 
           resultToSee[i].date = new Date(resultToSee[i].date).toUTCString();
 
           // Keywords
-          var keys = '';
-          for (var x = 0; x < resultToSee[i].keywords.length; x++) {
-            keys += resultToSee[i].keywords[x] + " ";
-          }
-          keys = keys.trim();
-          resultToSee[i].keywords = keys;
+          // var keys = '';
+          // for (var x = 0; x < resultToSee[i].keywords.length; x++) {
+          //   keys += resultToSee[i].keywords[x] + " ";
+          // }
+          // keys = keys.trim();
+          // resultToSee[i].keywords = keys;
         }
 
 
