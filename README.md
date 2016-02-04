@@ -16,5 +16,12 @@ The third aspect is social. Users can share their custom MINdEXUS lists to their
 Target Audiences: consumers of media (such as movie goers, book readers, TV series watchers).
 
 Key Principles: Striving for ease of use over efficiency of processing data in the backend. Keeping 				app design simple and strive for an intuitive UI.  
+
+Credits: This app was completed with the following group members:
+
+https://github.com/johnibr
+https://github.com/jasonphan
+https://github.com/ivywireline
+https://github.com/MsClaudz
  
 
