@@ -188,8 +188,8 @@
         <h1>Want to See</h1><hr>
 
         <!-- Entry info To See -->
-        <uib-accordion close-others="false" ng-repeat="entry in toSee">
-          <uib-accordion-group  class = "col-sm-13">
+        <uib-accordion close-others="false">
+          <uib-accordion-group class="col-sm-13" ng-repeat="entry in toSee" is-open="true">
             <button class="btn btn-danger btn-sm" ng-click="deleteEntry(entry)" aria-label="Remove" style="float: right;">Delete Entry</button>
             <uib-accordion-heading>
               <strong>Title:</strong> {{entry.name}}
@@ -199,7 +199,7 @@
               <strong>Category:</strong> {{entry.category}} <br>
               <strong>Keywords:</strong> {{entry.keywords}} <br>
               <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
-              <strong>Seen It:</strong> {{entry.seenIt}} <br>
+<!--               <strong>Seen It:</strong> {{entry.seenIt}} <br> -->
               <strong>Personal Note:</strong> {{entry.note}}
               <br><br>
               <button class="btn btn-warning" ng-click="editEntry(entry)" aria-label="Edit">Edit Entry</button>
@@ -217,8 +217,8 @@
       <h1>Seen It</h1><hr>
 
       <!-- Entry info Seen It -->
-      <uib-accordion close-others="false" ng-repeat="entry in seenIt">
-        <uib-accordion-group  class = "col-sm-13">
+      <uib-accordion close-others="false">
+        <uib-accordion-group class ="col-sm-13" ng-repeat="entry in seenIt" is-open="true">
           <button class="btn btn-danger btn-sm" ng-click="deleteEntry(entry)" aria-label="Remove" style="float: right;">Delete Entry</button>
           <uib-accordion-heading>
             <strong>Title:</strong> {{entry.name}}
@@ -228,7 +228,7 @@
             <strong>Category:</strong> {{entry.category}} <br>
             <strong>Keywords:</strong> {{entry.keywords}} <br>
             <strong>Rating:</strong> <uib-rating ng-model="entry.rating" max="5" aria-labelledby="default-rating" readonly = "true"></uib-rating><br>
-            <strong>Seen It:</strong> {{entry.seenIt}} <br>
+<!--             <strong>Seen It:</strong> {{entry.seenIt}} <br> -->
             <strong>Personal Note:</strong> {{entry.note}}
             <br><br>
             <button class="btn btn-warning" ng-click="editEntry(entry)" aria-label="Edit">Edit Entry</button>

@@ -35,6 +35,22 @@ angular.module('mindexusApp')
             }
           }
 
+
+          // Change date, keywords, etc... so it's more readable.
+          for (var i = 0; i < result.length; i++) {
+            // Date
+            result[i].date = new Date(result[i].date).toUTCString();
+
+            // keywords
+            var keys = '';
+            for (var x = 0; x < result[i].keywords.length; x++) {
+              keys += result[i].keywords[x] + " ";
+            }
+            keys = keys.trim();
+            result[i].keywords = keys;
+          }
+
+
           //alert(JSON.stringify(result));
           $scope.entryresults = result;
         });
